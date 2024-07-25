@@ -1,0 +1,65 @@
+.page1 {
+  height: 112vh;
+  background-image: url(./src/Images/mountain.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+body {
+  margin: 0px;
+}
+.imgname {
+  position: absolute;
+  mix-blend-mode: lighten;
+  top: -20%;
+}
+.fog {
+  position: relative;
+
+  width: -webkit-fill-available;
+  mix-blend-mode: lighten;
+  bottom: -239px;
+}
+.page2 {
+  width: -webkit-fill-available;
+  height: 3000px;
+  background: #1e1632;
+  border-radius: 31px;
+  position: absolute;
+  top: 93vh;
+  overflow: hidden;
+}
+.about {
+  width: 360px;
+  position: absolute;
+  mix-blend-mode: lighten;
+  left: 8%;
+  top: -3%;
+}
+.brush {
+  width: 1100px;
+  height: 500px;
+  position: absolute;
+  transform: scaleX(-1);
+  top: 1%;
+  left: 38%;
+}
+.intro {
+  right: 5%;
+  position: absolute;
+  font-size: 32px;
+  font-weight: 800;
+  width: 594px;
+  top: 5%;
+}
+.profile {
+  width: 400px;
+  border-radius: 200px;
+  position: absolute;
+  top: 4%;
+  left: 7%;
+}

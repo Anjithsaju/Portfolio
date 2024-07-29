@@ -1,0 +1,72 @@
+.name {
+  position: relative;
+  left: 83vh;
+  top: 14vh;
+  font-size: 87px;
+  width: 481px;
+}
+.hi {
+  position: relative;
+  top: 29vh;
+  font-size: 150px;
+  left: 56vh;
+}
+
+#page1 {
+  display: flex;
+  width: -webkit-fill-available;
+  position: absolute;
+  /* display: none; */
+  z-index: 2;
+  top: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  flex-direction: column;
+  background: url(https://plus.unsplash.com/premium_photo-1667587245819-2bea7a93e7a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  perspective: 100px;
+  /* animation: zoom 10s linear(0 0%, 1.54 92.35%) forwards; */
+  /* animation-delay: 4s; */
+  /* animation-timeline: scroll(); */
+}
+#page2 {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow-x: hidden;
+  background: red;
+}
+@keyframes zoom {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 2;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: none;
+  }
+}
+.ace {
+  position: absolute;
+  width: 200px;
+  animation: moving 10s linear infinite;
+}
+@keyframes moving {
+  0% {
+    transform: translateX(0%);
+    transform: translateY(0%);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateX(50%);
+    transform: translateY(20%);
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: translateX(70%);
+    transform: translateY(80%);
+    transform: rotate(0deg);
+  }
+}

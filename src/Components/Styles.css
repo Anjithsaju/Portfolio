@@ -1,6 +1,6 @@
 .page1 {
   height: 112vh;
-  background-image: url(./src/Images/mountain.jpg);
+  background-image: url("https://i.postimg.cc/mrv84pWZ/mountain.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -15,7 +15,8 @@ body {
 .imgname {
   position: absolute;
   mix-blend-mode: lighten;
-  top: -20%;
+  top: -26%;
+  width: 140vh;
 }
 .fog {
   position: relative;
@@ -25,17 +26,22 @@ body {
   bottom: -239px;
 }
 .page2 {
+  display: flex;
   width: -webkit-fill-available;
   height: 3000px;
   background: #1e1632;
+  background: linear-gradient(to right, #1e1632, #212b2cf0);
   border-radius: 31px;
   position: absolute;
   top: 93vh;
   overflow: hidden;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 .about {
   width: 360px;
-  position: absolute;
+  margin-left: 60px;
   mix-blend-mode: lighten;
   left: 8%;
   top: -3%;
@@ -43,23 +49,96 @@ body {
 .brush {
   width: 1100px;
   height: 500px;
-  position: absolute;
+
   transform: scaleX(-1);
-  top: 1%;
-  left: 38%;
 }
 .intro {
-  right: 5%;
-  position: absolute;
-  font-size: 32px;
+  position: relative;
+  z-index: 1;
+  /* right: 5%; */
+  font-size: 28px;
   font-weight: 800;
   width: 594px;
-  top: 5%;
+  bottom: 44%;
+  left: 22%;
 }
 .profile {
+  position: relative;
   width: 400px;
   border-radius: 200px;
-  position: absolute;
-  top: 4%;
+  /* top: 4%; */
   left: 7%;
+  bottom: 18%;
+}
+
+#btn1 {
+  background: none;
+  margin: 20px;
+  border: none;
+  border-radius: 20px;
+  filter: drop-shadow(2px 4px 6px black);
+  /* border: 2px solid;
+} */
+}
+#btn1:hover {
+  background: #65558f;
+  /* border: 2px solid #65558f; */
+}
+.nav {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+}
+.work {
+  mix-blend-mode: lighten;
+  /* position: absolute;
+  bottom: 20%;
+  left: 23%; */
+}
+.card {
+  margin: 20px;
+  padding: 7px;
+}
+.carddiv {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
+.work {
+  color: white;
+  font-size: 30px;
+  font-family: JetBrains Mono, monospace;
+}
+.workdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info {
+  display: flex;
+  flex-direction: row;
 }

@@ -80,6 +80,7 @@ html {
   background-size: 132%;
   height: 100vh;
   overflow: hidden;
+  background-repeat: no-repeat;
 }
 .textcontainer {
   position: absolute;
@@ -90,6 +91,7 @@ html {
   clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
 }
 .nav {
+  z-index: 3;
   position: absolute;
   top: 1%;
   right: 2%;
@@ -120,7 +122,8 @@ html {
 }
 .home.introtrans {
   transition: 2s;
-  background-position: 100% 0;
+  background-size: 116%;
+  background-position: 51% 0;
 }
 .textcontainer.introtrans .name,
 .textcontainer.introtrans .hi {
@@ -130,4 +133,10 @@ html {
 .profile.introtrans {
   transition: 2s;
   left: 5vw;
+}
+
+.home.out {
+  scale: 20;
+  transition: 2s;
+  opacity: 0;
 }

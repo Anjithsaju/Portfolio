@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
-import "./new.css"; // Import your CSS file
-
+import "./new.css";
+import "./Works.css"; // Import your CSS file
+import Works from "./Works";
 function Theone() {
   const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const handleClick = (buttonId: string) => {
     setActiveButton(buttonId);
   };
-
+  let workclass = "workdiv";
   let homeClassName = "home initial";
   let textClassName = "textcontainer initial";
   let hiname = "hi initial";
   let nameclass = "name initial";
   let imgname = "profile initial";
+  let worksname = "works";
   if (activeButton === "intro") {
     hiname = "hi";
     nameclass = "name";
@@ -25,6 +27,18 @@ function Theone() {
     imgname = "profile";
     hiname = "hi";
     nameclass = "name";
+  } else if (activeButton === "myworks") {
+    worksname = "works active";
+    textClassName = "textcontainer";
+    const gethome = document.querySelector(".home.introtrans");
+    if (gethome) {
+      imgname = "profile introtrans";
+      console.log("work");
+    } else imgname = "profile";
+    hiname = "hi";
+    nameclass = "name";
+    workclass = "workdiv active";
+    homeClassName = "home out";
   }
   useEffect(() => {
     const myFunction = () => {
@@ -36,45 +50,55 @@ function Theone() {
     return () => clearTimeout(timerId);
   }, []);
   return (
-    <div>
+    <div style={{ overflow: "hidden" }}>
+      <div className="nav">
+        <button
+          id="home"
+          type="button"
+          className="navbtn btn btn-primary "
+          onClick={() => handleClick("home")}
+        >
+          Home
+        </button>
+        <button
+          id="intro"
+          type="button"
+          className="btn btn-primary navbtn"
+          onClick={() => handleClick("intro")}
+        >
+          Myself
+        </button>
+        <button
+          id="myworks"
+          type="button"
+          className="btn btn-primary navbtn"
+          onClick={() => handleClick("myworks")}
+        >
+          My Works
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary navbtn"
+          onClick={() => handleClick("btn4")}
+        >
+          Primary 4
+        </button>
+      </div>
       <div className={homeClassName}>
-        <div className="nav">
-          <button
-            id="home"
-            type="button"
-            className="navbtn btn btn-primary "
-            onClick={() => handleClick("home")}
-          >
-            Home
-          </button>
-          <button
-            id="intro"
-            type="button"
-            className="btn btn-primary navbtn"
-            onClick={() => handleClick("intro")}
-          >
-            Intro
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary navbtn"
-            onClick={() => handleClick("btn3")}
-          >
-            Primary 3
-          </button>
-          <button
-            type="button"
-            className="btn btn-primary navbtn"
-            onClick={() => handleClick("btn4")}
-          >
-            Primary 4
-          </button>
+        <div>
+          <div className={textClassName}>
+            <h1 className={hiname}>Hello,</h1>
+            <h2 className={nameclass}>I am Anjith Saju</h2>
+          </div>
+          <img
+            src="./src/Images/profile.jpg"
+            alt="Profile"
+            className={imgname}
+          />
         </div>
-        <div className={textClassName}>
-          <h1 className={hiname}>Hello,</h1>
-          <h2 className={nameclass}>I am Anjith Saju</h2>
-        </div>
-        <img src="./src/Images/profile.jpg" alt="Profile" className={imgname} />
+      </div>
+      <div className={worksname}>
+        <Works workclass={workclass}></Works>
       </div>
     </div>
   );

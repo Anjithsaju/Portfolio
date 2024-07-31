@@ -1,0 +1,149 @@
+.carddiv {
+  width: inherit;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  transition: 2s;
+  width: 200px;
+  /* animation: slide 2s ease-in-out forwards; */
+}
+.workdiv {
+  width: 100vw;
+  transition: 2s;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#crd {
+  transition: 500ms;
+  padding: 1rem;
+  height: 23rem;
+  width: 17rem;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  height: 2rem;
+  /* animation: skew 2.5s ease-in-out forwards; */
+}
+.workdiv h2 {
+  transition: 2s;
+  margin-top: 15vh;
+  margin-left: 9vw;
+  margin-bottom: 8vh;
+  font-size: 3.4rem;
+  color: #65558f;
+  font-size: 0;
+  /* animation: pop 2s ease-in-out forwards; */
+}
+.carddiv h5 {
+  font-size: 1.1rem;
+}
+.carddiv p {
+}
+
+.card:hover {
+  transition: 500ms;
+  transform: scale(1.05);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-30deg);
+  transition: left 0.5s ease;
+}
+
+.card:hover::before {
+  left: 100%;
+  transition: left 0.5s ease;
+}
+/* strong {
+  display: grid;
+  grid-auto-flow: column;
+  margin-top: 28px;
+} */
+/* @keyframes slide {
+  from {
+    opacity: 0;
+
+    width: 200px;
+  }
+  to {
+    opacity: 1;
+    width: inherit;
+  }
+}
+@keyframes skew {
+  from {
+    height: 2rem;
+  }
+  to {
+    height: 23rem;
+  }
+}
+@keyframes pop {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 3.4rem;
+  }
+} */
+.works.active {
+  transition: 2.5s;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  /* z-index: -1; */
+  height: 100vh;
+  background: url(./src/Images/white2.jpg);
+  background-size: cover;
+  background-position: top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.works {
+  transition: 2s;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  /* z-index: -1; */
+  height: 100vh;
+  background: url(./src/Images/white2.jpg);
+  background-size: cover;
+  background-position: top;
+  background-size: 200% 437%;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+}
+
+.workdiv.active #crd {
+  transition: transform 500ms ease, height 2.5s ease;
+  /* transform: scale(1); */
+  height: 25rem;
+}
+
+.workdiv.active h2 {
+  transition: 2s;
+  font-size: 3.4rem;
+}
+.workdiv.active .carddiv {
+  transition: 2s;
+  opacity: 1;
+  width: inherit;
+}
+.workdiv.active {
+  opacity: 1;
+}

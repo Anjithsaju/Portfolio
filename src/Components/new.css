@@ -77,7 +77,7 @@ html {
 }
 .home {
   transition: 2s;
-  background: url("./src/Images/white.jpg");
+  background: url("https://i.postimg.cc/TPXHr8rQ/white.jpg");
   background-size: 132%;
   height: 100vh;
   overflow: hidden;

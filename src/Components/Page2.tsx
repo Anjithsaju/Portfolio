@@ -1,4 +1,3 @@
-import Works from "./Works";
 import "./Animations.css";
 import "./Styles.css";
 
@@ -27,7 +26,6 @@ function Page2() {
           </div>
         </div>
         <div className="scrolll"></div>
-        <Works></Works>
       </div>
     </>
   );

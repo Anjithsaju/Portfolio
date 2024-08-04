@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./new.css";
 import "./Works.css";
 import "./Intro.css"; // Import your CSS file

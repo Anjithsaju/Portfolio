@@ -31,7 +31,7 @@ function Works({ workclass }: Props) {
           </div>
           <div id="crd" className="card">
             <img
-              src="https://i.postimg.cc/yYjK0DyZ/expense.png"
+              src="https://i.postimg.cc/LsNBhGvJ/expense.png"
               className="card-img-top"
               alt=""
             />
@@ -51,7 +51,7 @@ function Works({ workclass }: Props) {
           </div>
           <div id="crd" className="card">
             <img
-              src="https://i.postimg.cc/GmS1S6N3/sign.png"
+              src="https://i.postimg.cc/D0bqj0hG/sign.png"
               className="card-img-top"
               alt=""
             />
@@ -72,7 +72,7 @@ function Works({ workclass }: Props) {
           </div>
           <div id="crd" className="card">
             <img
-              src="https://i.postimg.cc/t4gjk9Bm/link.png"
+              src="https://i.postimg.cc/3RqXFps7/link.png"
               className="card-img-top"
               alt=""
             />

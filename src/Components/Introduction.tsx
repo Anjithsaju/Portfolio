@@ -1,4 +1,5 @@
 import ScrollAnimation from "./ScrollAnimation";
+import Experience from "./Experience";
 function Introduction() {
   return (
     <>
@@ -17,7 +18,18 @@ function Introduction() {
           Dolores, eveniet dolorem!
         </h3>
         <p>hello</p>
+
+        <div>
+          <hr />
+          <h2 style={{ color: " #fff2c2", fontSize: "3rem" }}>Experience</h2>
+          <Experience></Experience>
+          <hr />
+        </div>
+        <hr />
+
+        <h2 style={{ color: " #fff2c2", fontSize: "3rem" }}>My Skills</h2>
         <ScrollAnimation></ScrollAnimation>
+        <hr />
       </div>
     </>
   );

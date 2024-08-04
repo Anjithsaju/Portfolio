@@ -5,7 +5,7 @@
   height: inherit;
   width: 100vw;
   background: linear-gradient(44deg, black, #2c0854);
-  transition: 2s;
+  transition: top 2s;
   top: 0;
   overflow: hidden;
   overflow-y: scroll;
@@ -18,7 +18,7 @@
 .introdiv {
   padding: 4vw;
   padding-top: 16vw;
-  transition: 2s;
+  transition: top 2s;
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -29,7 +29,7 @@
   transition: 1.5s;
 
   z-index: 5;
-  color: white;
+  color: #fff2c2;
 }
 .textcontainer {
   z-index: 5;
@@ -42,7 +42,7 @@
 .home.intro .textcontainer .name {
   font-size: 3rem;
   top: 1vw;
-  left: 7vw;
+  left: 3.5vw;
 }
 .home.intro .profile {
   left: 73vw;
@@ -61,3 +61,10 @@
   transition: 2s;
   top: 0;
 } */
+hr {
+  margin: 1rem 0;
+  color: #fff2c2;
+  border: 0;
+  border-top: var(--bs-border-width) solid;
+  opacity: 1;
+}

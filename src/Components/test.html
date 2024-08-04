@@ -4,11 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .vertical-line {
+        border-left: 7px solid white;
+        height: 100vh;
+        margin: 25px;
+        border-radius: 10px;
+      }
+
+      .main {
+        background: red;
+        height: 100vh;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .div1 {
+        width: 341px;
+        padding: 10px;
+        background: yellow;
+        position: relative;
+        top: -29vh;
+        height: 263px;
+        border-radius: 20px;
+      }
+      .div2 {
+        width: 400px;
+        height: 300px;
+        background: yellow;
+        position: relative;
+        top: 30vh;
+        width: 341px;
+        background: yellow;
+        position: relative;
+        /* top: -21vh; */
+        height: 263px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+    </style>
   </head>
   <body>
     <div>
-      <div>
-        <p>hello</p>
+      <div class="main">
+        <div class="div1">
+          <p>hello</p>
+        </div>
+
+        <div class="vertical-line"></div>
+        <div class="div2">
+          <p>hello</p>
+        </div>
       </div>
     </div>
   </body>

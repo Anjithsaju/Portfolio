@@ -55,13 +55,13 @@ html {
   position: relative;
   left: 10.1vw;
   opacity: 1;
-  top: 30vh;
+  top: 14vw;
   font-size: 5rem;
 }
 .hi {
   transition: 2s;
   position: relative;
-  top: 35vh;
+  top: 16vw;
   font-size: 6rem;
   left: 10vw;
   opacity: 1;
@@ -71,8 +71,9 @@ html {
   width: 19vw;
   border-radius: 10vw;
   transition: 2s;
-  top: 27vh;
+  top: 13vw;
   left: 62vw;
+  z-index: 7;
 }
 .home {
   transition: 2s;
@@ -88,10 +89,13 @@ html {
   height: 100vh;
   width: 100vw;
   transition: 2s;
+  top: 0;
+  left: 0;
   clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
 }
 .nav {
-  z-index: 3;
+  transition: 500ms;
+  z-index: 30;
   position: absolute;
   top: 1%;
   right: 2%;
@@ -101,7 +105,7 @@ html {
 .btn.btn-primary {
   --bs-btn-bg: #65558f;
   background-color: #65558f;
-  margin: 20px;
+  margin: 1vw;
   border: none;
   border-radius: 20px;
 }
@@ -133,10 +137,68 @@ html {
 .profile.introtrans {
   transition: 2s;
   left: 5vw;
+  z-index: 4;
 }
 
 .home.out {
   scale: 20;
   transition: 2s;
   opacity: 0;
+}
+.Introdiv.out {
+  /* scale: 20; */
+  transition: 2s;
+  opacity: 0;
+}
+
+.Introdiv {
+  transition: 2s;
+  display: flex;
+  /* border: 2px solid #ffffff; */
+  border-radius: 20px;
+  background: rgb(95.686% 95.686% 95.686%);
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  transition: 2s;
+  width: 97vw;
+  height: 200vh;
+  position: absolute;
+  left: 1vw;
+  top: 107px;
+  padding: 10px;
+  background: linear-gradient(36deg, #004a62cf, #28423bab);
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70vw;
+  height: 10vh;
+  position: absolute;
+  left: 120vw;
+  top: 107px;
+}
+.Introdiv.active {
+  display: flex;
+  /* border: 2px solid #ffffff; */
+  border-radius: 20px;
+  background: rgb(95.686% 95.686% 95.686%);
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  transition: 2s;
+  width: 97vw;
+  height: 200vh;
+  position: absolute;
+  left: 1vw;
+  top: 107px;
+  padding: 10px;
+  background: linear-gradient(36deg, #004a62cf, #28423bab);
+  flex-direction: column;
+  justify-content: space-between;
+}
+.itrodiv {
+  position: absolute;
+  width: 100vw;
+  /* padding: 27px; */
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  top: 0;
 }

@@ -97,7 +97,7 @@ function Theone() {
       <div className={homeClassName}>
         <div className="contentdiv">
           <img
-            src="./src/Images/profile.jpg"
+            src="https://i.postimg.cc/pXw0HN1x/profile.jpg"
             alt="Profile"
             className={imgname}
           />

@@ -10,7 +10,11 @@ function Works({ workclass }: Props) {
         <h2>My Works</h2>
         <div className="carddiv">
           <div id="crd" className="card">
-            <img src="./src/Images/split.png" className="card-img-top" alt="" />
+            <img
+              src="https://i.postimg.cc/bJwgTqd0/split.png"
+              className="card-img-top"
+              alt=""
+            />
             <div className="card-body">
               <h5 className="card-title">Split-App</h5>
               <p className="card-text">
@@ -27,7 +31,7 @@ function Works({ workclass }: Props) {
           </div>
           <div id="crd" className="card">
             <img
-              src="./src/Images/expense.png"
+              src="https://i.postimg.cc/yYjK0DyZ/expense.png"
               className="card-img-top"
               alt=""
             />
@@ -46,7 +50,11 @@ function Works({ workclass }: Props) {
             </div>
           </div>
           <div id="crd" className="card">
-            <img src="./src/Images/sign .png" className="card-img-top" alt="" />
+            <img
+              src="https://i.postimg.cc/GmS1S6N3/sign.png"
+              className="card-img-top"
+              alt=""
+            />
             <div className="card-body">
               <h5 className="card-title">Sign in</h5>
               <p className="card-text">
@@ -63,7 +71,11 @@ function Works({ workclass }: Props) {
             </div>
           </div>
           <div id="crd" className="card">
-            <img src="./src/Images/link.png" className="card-img-top" alt="" />
+            <img
+              src="https://i.postimg.cc/t4gjk9Bm/link.png"
+              className="card-img-top"
+              alt=""
+            />
             <div className="card-body">
               <h5 className="card-title">Linktree</h5>
               <p className="card-text">

@@ -9,12 +9,17 @@
   /* animation: slide 2s ease-in-out forwards; */
 }
 .workdiv {
-  width: 100vw;
+  position: absolute;
+  /* background: red; */
+  /* padding: 99px; */
+  width: 92%;
+  height: 64%;
   transition: 2s;
   opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 #crd {
   transition: 500ms;
@@ -144,4 +149,15 @@
 }
 .workdiv.active {
   opacity: 1;
+}
+.temp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 41px;
+}
+.maindiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

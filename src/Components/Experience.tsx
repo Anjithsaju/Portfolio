@@ -5,7 +5,7 @@ const Experience: React.FC = () => {
   return (
     <div className="main">
       <div className="div1">
-        <h2>Experience1</h2>
+        <h3>Experience1</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
           corporis distinctio doloribus id autem architecto aliquid, quae magni
@@ -15,7 +15,7 @@ const Experience: React.FC = () => {
       </div>
       <div className="vertical-line"></div>
       <div className="div2">
-        <h2>Experience2</h2>
+        <h3>Experience2</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti
           corporis distinctio doloribus id autem architecto aliquid, quae magni

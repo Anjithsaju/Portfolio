@@ -61,7 +61,7 @@ function Theone() {
   }, []);
   return (
     <div style={{ overflow: "hidden", position: "relative" }}>
-      <div className="nav">
+      <nav className="nav">
         <button
           id="home"
           type="button"
@@ -93,7 +93,7 @@ function Theone() {
         >
           Primary 4
         </button>
-      </div>
+      </nav>
       <div className={homeClassName}>
         <div className="contentdiv">
           <img
@@ -103,7 +103,11 @@ function Theone() {
           />
           <div className={textClassName}>
             <h1 className={hiname}>Hello,</h1>
-            <h2 className={nameclass}>I am Anjith Saju</h2>
+            {/* <h2 className={nameclass}>I am Anjith Saju</h2> */}
+            <div className={nameclass}>
+              <h2>I am </h2>
+              <h2 className="anjith"> Anjith Saju</h2>
+            </div>
           </div>
         </div>
         <div className="introdiv">

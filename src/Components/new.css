@@ -1,50 +1,62 @@
 @keyframes initialzoom {
   from {
-    background-size: 100%;
+    background-size: auto 122%;
   }
   to {
-    background-size: 132%;
+    background-size: auto 140%;
   }
 }
 @keyframes initialmovehi {
   from {
     opacity: 0;
-    left: 14vw;
+    left: 4vw;
   }
   to {
-    left: 10vw;
+    left: 0;
     opacity: 1;
   }
 }
 @keyframes initialmovename {
   from {
-    left: 8vw;
+    right: 2vw;
     opacity: 0;
   }
   to {
-    left: 10.1vw;
+    right: 0;
     opacity: 1;
   }
 }
 @keyframes initialimg {
   from {
-    left: -21vw;
+    left: -81vw;
   }
   to {
-    left: 62vw;
+    left: 6vw;
   }
 }
 @keyframes initialtext {
   from {
+    opacity: 0;
     clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
   }
   to {
-    clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
+    opacity: 1;
+    clip-path: polygon(0% 0%, 70vw 0%, 70vw 100%, 0% 100%);
   }
 }
 @keyframes initialfade {
   to {
     opacity: 1;
+  }
+}
+@keyframes initialcontent {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
   }
 }
 html {
@@ -53,45 +65,54 @@ html {
 .name {
   transition: 2s;
   position: relative;
-  left: 10.1vw;
+  /* left: 10.1%; */
   opacity: 1;
-  top: 14vw;
-  font-size: 5rem;
+  width: inherit;
+  height: inherit;
+  font-size: clamp(6rem, 6vh, 8rem);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .hi {
   transition: 2s;
   position: relative;
-  top: 16vw;
+  /* top: 16%; */
   font-size: 6rem;
-  left: 10vw;
+  /* left: 10%; */
   opacity: 1;
 }
 .profile {
-  position: absolute;
-  width: 19vw;
-  border-radius: 10vw;
+  position: relative;
+  width: 19%;
+
+  border-radius: 80%;
   transition: 2s;
-  top: 13vw;
-  left: 62vw;
+  left: 6vw;
   z-index: 7;
 }
 .home {
   transition: 2s;
-  background: url("https://i.postimg.cc/TPXHr8rQ/white.jpg");
-  background-size: 132%;
-  height: 100vh;
+
+  /* background: url(./src/Images/sky3.jpg); */
+  /* background-size: cover; */
+  /* height: 100vh; */
   overflow: hidden;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .textcontainer {
-  position: absolute;
+  /* background: green; */
+  position: relative;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
   transition: 2s;
-  top: 0;
-  left: 0;
-  clip-path: polygon(0% 0%, 60% 0%, 60% 100%, 0% 100%);
+  width: 45vw;
+  /* height: 134px; */
+  /* top: 0vh; */
+  right: 6vw;
+  clip-path: polygon(0% 0%, 70vw 0%, 70vw 100%, 0% 100%);
 }
 .nav {
   transition: 500ms;
@@ -112,17 +133,19 @@ html {
 .home.initial {
   animation: initialzoom 2s ease-in-out forwards;
 }
-.profile.initial {
-  animation: initialimg 2s ease-in-out forwards;
-}
-.textcontainer.initial {
-  animation: initialtext 2s ease-in-out forwards;
-}
-.hi.initial {
-  animation: initialmovehi 2s ease-in-out forwards;
-}
-.name.initial {
-  animation: initialmovename 2s ease-in-out forwards;
+@media (orientation: landscape) {
+  .profile.initial {
+    animation: initialimg 1.8s ease-in-out forwards;
+  }
+  .textcontainer.initial {
+    animation: initialtext 2s ease-in-out forwards;
+  }
+  .hi.initial {
+    animation: initialmovehi 2s ease-in-out forwards;
+  }
+  .name.initial {
+    animation: initialmovename 2s ease-in-out forwards;
+  }
 }
 .home.introtrans {
   transition: 2s;
@@ -201,4 +224,53 @@ html {
   overflow: hidden;
   overflow-y: scroll;
   top: 0;
+}
+h2 {
+  color: rgb(255, 242, 194);
+}
+.contentdiv {
+  /* background: red; */
+  background: url(https://i.postimg.cc/TPXHr8rQ/white.jpg);
+  background-size: auto 140%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+@media (orientation: portrait) {
+  .nav {
+    scale: 2;
+    right: 35vw;
+  }
+
+  .home .profile {
+    scale: 2.5;
+    bottom: 75px;
+    left: -28px;
+  }
+  .home .hi {
+    top: 2px;
+  }
+  .home .name {
+    top: 2px;
+  }
+  .home .textcontainer {
+    bottom: 14px;
+    scale: 1.5;
+    left: 20px;
+  }
+  /* .contentdiv {
+    animation: initialcontent 2s ease-in-out forwards;
+  } */
+  .anjith {
+    position: relative;
+    left: 22px;
+  }
+}
+.name h2 {
+  font-size: clamp(6rem, 6vh, 8rem);
+  margin: 3px;
 }

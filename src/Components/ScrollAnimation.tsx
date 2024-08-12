@@ -151,7 +151,7 @@ const ScrollAnimation: React.FC = () => {
         .tag-list li {
           padding: 1rem;
         //   background: var(--clr-primary-400);
-        background:white;
+        background:#8d8d8d;
           border-radius: 0.5rem;
           box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
         }

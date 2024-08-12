@@ -1,9 +1,9 @@
-import Theone from "./Components/Theone";
-
+import Starwars from "./Components/Starwars";
 function App() {
   return (
     <>
-      <Theone></Theone>
+      {/* <Theone></Theone> */}
+      <Starwars></Starwars>
       {/* <Intro></Intro> */}
       {/* <Works></Works> */}
     </>

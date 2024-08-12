@@ -6,7 +6,8 @@ body {
 #page1 {
   background-image: url(./src/Images/Starwars.jpg);
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    /* Black overlay */ url(./src/Images/star.jpg);
+    /* Black overlay */
+      url("https://i.postimg.cc/4NWcTB5T/Largest-Collection-Of-Star-Wars-Wallpaper-For.jpg");
   background-size: cover;
   background-position: right bottom;
   height: 100vh;
@@ -81,7 +82,7 @@ nav {
 }
 
 #page2 {
-  background-image: url(./src/Images/Deathstar.jpg);
+  background-image: url("https://i.postimg.cc/3xWvrmS0/107763.jpg");
   background-size: cover;
   background-position: center;
   display: flex;

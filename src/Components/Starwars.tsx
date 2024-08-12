@@ -1,7 +1,7 @@
 import "./Page1.css";
 import ScrollAnimation from "./ScrollAnimation";
-import Works from "./Works";
-import Experience from "./Experience";
+// import Works from "./Works";
+// import Experience from "./Experience";
 function Starwars() {
   return (
     <>

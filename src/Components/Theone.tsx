@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./new.css";
 import "./Works.css";
 import "./Intro.css"; // Import your CSS file
-import Works from "./Works";
+// import Works from "./Works";
 import Intro from "./Intro";
 import Introduction from "./Introduction";
 function Theone() {
@@ -11,7 +11,7 @@ function Theone() {
   const handleClick = (buttonId: string) => {
     setActiveButton(buttonId);
   };
-  let workclass = "workdiv";
+  // let workclass = "workdiv";
   let homeClassName = "home initial";
   let textClassName = "textcontainer initial";
   let hiname = "hi initial";
@@ -46,7 +46,7 @@ function Theone() {
     } else imgname = "profile";
     hiname = "hi";
     nameclass = "name";
-    workclass = "workdiv active";
+    // workclass = "workdiv active";
 
     homeClassName = "home out";
   }
@@ -110,12 +110,13 @@ function Theone() {
             </div>
           </div>
         </div>
+        <p>hello</p>
         <div className="introdiv">
           <Introduction></Introduction>
         </div>
       </div>
       <div className={worksname}>
-        <Works workclass={workclass}></Works>
+        {/* <Works workclass={workclass}></Works> */}
       </div>
       <div className="itrodiv">
         {/* <img src="./src/Images/profile.jpg" alt="Profile" className={imgname} /> */}

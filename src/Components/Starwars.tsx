@@ -1,6 +1,6 @@
 import "./Page1.css";
 import ScrollAnimation from "./ScrollAnimation";
-// import Works from "./Works";
+import Works from "./Works";
 // import Experience from "./Experience";
 function Starwars() {
   return (
@@ -71,10 +71,15 @@ function Starwars() {
           </div>
         </div>
       </section>
-      <section id="page3">{/* <Experience></Experience> */}hello</section>
+      <section id="page3">
+        <h4>My Quests</h4>
+        <Works></Works>
+        {/* <img id="falcon" src="./src/Images/falcon.png" alt="" /> */}hello
+        {/* <Experience></Experience> */}
+      </section>
       <section id="page4">
         hello
-        <div>{/* <Works workclass={"workdiv active"}></Works> */}</div>
+        <div></div>
       </section>
       <section id="page5">
         hello{/* <ScrollAnimation></ScrollAnimation> */}

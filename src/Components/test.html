@@ -1,75 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lightsaber Text Effect</title>
-    <style>
-      /* Basic styles for the page */
-      body {
-        margin: 0;
-        padding: 0;
-        background: black;
-        overflow: hidden;
-        font-family: "Arial", sans-serif;
-      }
+<!-- import "./Works.css";
+interface Props {
+  workclass: string; // Add the pid prop to the Props interface
+}
+function Works({ workclass }: Props) {
+  return (
+    <>
+      <div className="maindiv">
+        {/* <img className="temp" src="./src/Images/template.png" alt="" /> */}
+        <div className={workclass}>
+          {/* <img src="./src/Images/mywork.gif" alt="" className="work" /> */}
+          {/* <h2>My Works</h2> */}
 
-      /* Container for the text and lightsaber effect */
-      .lightsaber-effect {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      /* Styles for the text */
-      .name {
-        font-size: 4rem;
-        color: white;
-        position: relative;
-        overflow: hidden;
-      }
-
-      /* Lightsaber swipe effect */
-      .name::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        height: 100%;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.5);
-        clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
-        transform: translateX(-100%);
-        transition: transform 1s ease-out;
-      }
-
-      .lightsaber-effect:hover .name::before {
-        transform: translateX(100%);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="lightsaber-effect">
-      <h1 class="name">Anjith Saju</h1>
-    </div>
-    <script>
-      // JavaScript to control the swipe effect
-      document.addEventListener("DOMContentLoaded", () => {
-        const nameElement = document.querySelector(".name");
-
-        // Create a swipe effect on mouseover
-        nameElement.addEventListener("mouseover", () => {
-          nameElement.style.setProperty("--swipe-direction", "right");
-          nameElement.classList.add("swipe");
-        });
-
-        // Reset the swipe effect on mouseout
-        nameElement.addEventListener("mouseout", () => {
-          nameElement.classList.remove("swipe");
-        });
-      });
-    </script>
-  </body>
-</html>
+          <div className="carddiv">
+            <div className="hologram">
+              {/* <img
+                style={{ width: "100%", height: "100%" }}
+                src="./src/Images/holo.png"
+                alt=""
+              /> */}
+              <div id="crd" className="card">
+                <img
+                  src="https://i.postimg.cc/bJwgTqd0/split.png"
+                  className="card-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Split-App</h5>
+                  <p className="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <a
+                    href="https://anjithsaju.github.io/"
+                    target="_blank"
+                    className="btn btn-danger"
+                  >
+                    Visit Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="hologram">
+              {/* <img
+                style={{ width: "100%", height: "100%" }}
+                src="./src/Images/holo.png"
+                alt=""
+              /> */}
+              <div id="crd" className="card">
+                <img
+                  src="https://i.postimg.cc/LsNBhGvJ/expense.png"
+                  className="card-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Expense Tracker</h5>
+                  <p className="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <a
+                    href="https://anjithsaju.github.io/Expenses/"
+                    target="_blank"
+                    className="btn btn-danger"
+                  >
+                    Visit Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="hologram">
+              {/* <img
+                style={{ width: "100%", height: "100%" }}
+                src="./src/Images/holo.png"
+                alt=""
+              /> */}
+              <div id="crd" className="card">
+                <img
+                  src="https://i.postimg.cc/D0bqj0hG/sign.png"
+                  className="card-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Sign in</h5>
+                  <p className="card-text">
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <a
+                    href="https://anjithsaju.github.io/sighinAS.github.io/"
+                    target="_blank"
+                    className="btn btn-danger"
+                  >
+                    Visit Site
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="hologram">
+              {/* <img
+                style={{ width: "100%", height: "100%" }}
+                src="./src/Images/holo.png"
+                alt=""
+              /> */}
+              <div id="crd" className="card">
+                <img
+                  src="https://i.postimg.cc/3RqXFps7/link.png"
+                  className="card-img-top"
+                  alt=""
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Linktree</h5>
+                  <p className="card-text">
+                    {" "}
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <a
+                    href="https://anjithsaju.github.io/Linktree/"
+                    target="_blank"
+                    className="btn btn-danger"
+                  >
+                    Visit Site
+                  </a>
+                  {/* <a
+                href="https://anjithsaju.github.io/Linktree/"
+                target="_blank"
+                className="btn btn-info"
+                style={{ marginLeft: "1.1vw" }}
+                >
+                View Code
+                </a> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+export default Works; -->

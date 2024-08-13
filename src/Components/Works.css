@@ -1,15 +1,19 @@
 .carddiv {
   width: inherit;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: 2s;
+  /* transition: 2s; */
   width: 200px;
+  opacity: 1;
+  width: inherit;
   /* animation: slide 2s ease-in-out forwards; */
+  flex-wrap: wrap;
+  gap: 78px;
 }
 .workdiv {
-  position: absolute;
+  position: relative;
   /* background: red; */
   /* padding: 99px; */
   width: 92%;
@@ -22,13 +26,19 @@
   align-items: center;
 }
 #crd {
+  height: 25rem;
+
   transition: 500ms;
   padding: 1rem;
   height: 23rem;
   width: 17rem;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  height: 2rem;
+
+  background: transparent;
+  backdrop-filter: blur(4px);
+  border: 1px solid #79f0f04a;
+  color: white;
   /* animation: skew 2.5s ease-in-out forwards; */
 }
 .workdiv h2 {
@@ -160,4 +170,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }

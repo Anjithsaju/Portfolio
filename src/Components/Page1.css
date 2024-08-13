@@ -71,7 +71,6 @@ nav {
   font-style: normal;
 }
 #page2,
-#page3,
 #page4,
 #page5 {
   height: 100vh;
@@ -93,10 +92,25 @@ nav {
   color: gold;
   font-size: clamp(1.5rem, 2.5vw, 5rem);
 }
-/* #page2 {
+#page3 h4 {
+  color: gold;
+  font-size: clamp(1.5rem, 2.5vw, 5rem);
+}
+/* #page3 {
+  background: green;
+} */
+#page3 {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    Black overlay url(./src/Images/vader.jpg);
-  */
+    url("https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
 .content {
   width: clamp(2%, 101vh, 100%);
   color: #ffffffa6;
@@ -105,4 +119,28 @@ nav {
   font-size: clamp(89%, 2vw, 137%);
   flex-direction: column;
   align-items: center;
+}
+#falcon {
+  background: red;
+  scale: 0.2;
+  position: relative;
+  left: 40%;
+  top: -38%;
+
+  animation: move linear forwards;
+  animation-timeline: view();
+  animation-range-start: 200px;
+  animation-range-end: 1000px;
+}
+@keyframes move {
+  from {
+    left: 40%;
+    /* scale: 0.2; */
+    top: -38%;
+  }
+  to {
+    left: -60%;
+    top: 103%;
+    /* scale: 1.2; */
+  }
 }

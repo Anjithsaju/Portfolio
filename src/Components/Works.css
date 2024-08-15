@@ -12,10 +12,6 @@
   /* animation: slide 2s ease-in-out forwards; */
   flex-wrap: wrap;
   gap: 78px;
-  animation: move ease-in-out forwards;
-  animation-timeline: view();
-  animation-range-start: 150px;
-  animation-range-end: 400px;
 }
 .workdiv {
   position: relative;
@@ -181,6 +177,10 @@
 @media (orientation: landscape) {
   .carddiv {
     scale: 0;
+    animation: move ease-in-out forwards;
+    animation-timeline: view();
+    animation-range-start: 150px;
+    animation-range-end: 400px;
   }
   @keyframes move {
     from {

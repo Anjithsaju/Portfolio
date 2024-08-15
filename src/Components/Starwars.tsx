@@ -1,27 +1,92 @@
 import "./Page1.css";
 import ScrollAnimation from "./ScrollAnimation";
 import Works from "./Works";
+import { useEffect, useState } from "react";
 // import Experience from "./Experience";
+// import Home from "./Scroll";
+// import Car from "./test";
 function Starwars() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections: NodeListOf<HTMLElement> =
+        document.querySelectorAll("section");
+      const navButtons: NodeListOf<HTMLButtonElement> =
+        document.querySelectorAll(".nav");
+
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          currentSection = section.getAttribute("id") || "";
+        }
+      });
+
+      navButtons.forEach((button) => {
+        button.classList.remove("active");
+        if (
+          button.parentElement?.getAttribute("href")?.includes(currentSection)
+        ) {
+          button.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // Scrolling down
+      setIsVisible(false);
+    } else {
+      // Scrolling up
+      setIsVisible(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <>
-      <nav>
-        <a href="#page1">
+      <nav
+        style={{ position: "fixed" }}
+        className={` navbar1 ${isVisible ? "visible" : "hidden"}  `}
+      >
+        <a id="stupid" href="#page1">
           <button id="hg" className="nav alata-regular">
             Home Base
           </button>
         </a>
-        <a href="#page2">
+        <a id="stupid" href="#page2">
           <button className="nav">Jedi Profile</button>
         </a>
 
-        <a href="#page3">
-          <button className="nav">Force Powers</button>
-        </a>
-        <a href="#page4">
+        <a id="stupid" href="#page3">
           <button className="nav">Quest Log</button>
         </a>
-        <a href="#page5">
+        <a id="stupid" href="#page4">
+          <button className="nav">Force Powers</button>
+        </a>
+        <a id="stupid" href="#page5">
           <button className="nav">Transmission</button>
         </a>
       </nav>
@@ -74,14 +139,17 @@ function Starwars() {
       <section id="page3">
         <h4>My Quests</h4>
         <Works></Works>
-        {/* <img id="falcon" src="./src/Images/falcon.png" alt="" /> */}hello
-        {/* <Experience></Experience> */}
       </section>
       <section id="page4">
-        hello
-        <div></div>
+        {/* <img src="./src/Images/yoda.png" alt="" /> */}
+        {/* <Experience></Experience> */}
+        {/* <div className="data">
+          <Home></Home>
+        </div> */}
       </section>
       <section id="page5">
+        {/* <Car></Car> */}
+        {/* <Timeline></Timeline> */}
         hello{/* <ScrollAnimation></ScrollAnimation> */}
       </section>
     </>

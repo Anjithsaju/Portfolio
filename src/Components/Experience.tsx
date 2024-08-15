@@ -1,4 +1,3 @@
-import React from "react";
 import "./Experience.css";
 
 const Experience: React.FC = () => {
@@ -13,6 +12,7 @@ const Experience: React.FC = () => {
           ducimus hic.
         </p>
       </div>
+
       <div className="vertical-line"></div>
       <div className="div2">
         <h3>Experience2</h3>

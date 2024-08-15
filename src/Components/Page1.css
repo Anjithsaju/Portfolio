@@ -20,7 +20,7 @@ body {
   width: clamp(53%, 58vh, 84%);
   color: #ffc107;
   font-size: clamp(2rem, 4vw, 24rem);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
 }
 .Textcontainer h5 {
   color: white;
@@ -37,10 +37,9 @@ body {
   color: inherit; /* Removes the default blue color and uses the current text color */
   text-decoration: none; /* Removes the underline */
 }
-#hg {
-  font-size: 20px;
+.nav.active {
   color: gold;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .nav {
   background: none;
@@ -51,14 +50,21 @@ body {
   margin-top: 0;
 }
 nav {
+  margin: 5px;
   margin-top: 10px;
   position: fixed;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100vw;
+  right: 4px;
   font-size: 18px;
-  justify-content: flex-end;
+  justify-content: center;
+  z-index: 8;
+  background: #00000030;
+  backdrop-filter: blur(59px);
+  border: 2px solid #204243;
+  border-radius: 17px;
+  padding: 5px;
 }
 .alata-regular {
   font-family: "Alata", sans-serif;
@@ -79,7 +85,14 @@ nav {
   background-size: cover;
   background-position: center;
 }
-
+#page4 {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
+    url("https://i.postimg.cc/W1w5grVb/Star-Wars-spaceship-Imperial-Forces-digital-art-science-fiction-Star-Wars-Ships-1552607-wallhere-com.jpg");
+  background-size: cover;
+  background-position: top;
+}
 #page2 {
   min-height: 100vh;
   width: 100vw;
@@ -106,9 +119,9 @@ nav {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-around;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg");
+  justify-content: space-evenly;
+  background: linear-gradient(9deg, rgb(0 0 0), rgb(0 0 0 / 26%)),
+    url(https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -136,13 +149,46 @@ nav {
 }
 @keyframes move {
   from {
-    left: 40%;
-    /* scale: 0.2; */
-    top: -38%;
+    scale: 0.2;
   }
   to {
-    left: -60%;
-    top: 103%;
-    /* scale: 1.2; */
+    scale: 1;
+  }
+}
+#saber {
+  left: -0.5vw;
+  position: relative;
+  width: 56vw;
+  bottom: 8vw;
+}
+/* Navbar.css */
+.navbar1 {
+  position: fixed;
+  top: 0;
+  /* width: 100%; */
+  transition: transform 0.3s ease;
+
+  z-index: 1000;
+}
+
+/* .nav {
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+     */
+@media (orientation: portrait) {
+  .navbar1.hidden {
+    transform: translateY(-140%);
+  }
+
+  .navbar1.visible {
+    transform: translateY(0);
+  }
+  .nav {
+    margin: 1px;
+    font-size: 12px;
   }
 }

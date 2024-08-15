@@ -1,139 +1,57 @@
-<!-- import "./Works.css";
-interface Props {
-  workclass: string; // Add the pid prop to the Props interface
-}
-function Works({ workclass }: Props) {
-  return (
-    <>
-      <div className="maindiv">
-        {/* <img className="temp" src="./src/Images/template.png" alt="" /> */}
-        <div className={workclass}>
-          {/* <img src="./src/Images/mywork.gif" alt="" className="work" /> */}
-          {/* <h2>My Works</h2> */}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Scrollbar with Image</title>
+    <style>
+      /* Basic page styling */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow-x: scroll; /* Enable vertical scrolling */
+        font-family: Arial, sans-serif;
+      }
 
-          <div className="carddiv">
-            <div className="hologram">
-              {/* <img
-                style={{ width: "100%", height: "100%" }}
-                src="./src/Images/holo.png"
-                alt=""
-              /> */}
-              <div id="crd" className="card">
-                <img
-                  src="https://i.postimg.cc/bJwgTqd0/split.png"
-                  className="card-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Split-App</h5>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                  <a
-                    href="https://anjithsaju.github.io/"
-                    target="_blank"
-                    className="btn btn-danger"
-                  >
-                    Visit Site
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="hologram">
-              {/* <img
-                style={{ width: "100%", height: "100%" }}
-                src="./src/Images/holo.png"
-                alt=""
-              /> */}
-              <div id="crd" className="card">
-                <img
-                  src="https://i.postimg.cc/LsNBhGvJ/expense.png"
-                  className="card-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Expense Tracker</h5>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                  <a
-                    href="https://anjithsaju.github.io/Expenses/"
-                    target="_blank"
-                    className="btn btn-danger"
-                  >
-                    Visit Site
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="hologram">
-              {/* <img
-                style={{ width: "100%", height: "100%" }}
-                src="./src/Images/holo.png"
-                alt=""
-              /> */}
-              <div id="crd" className="card">
-                <img
-                  src="https://i.postimg.cc/D0bqj0hG/sign.png"
-                  className="card-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Sign in</h5>
-                  <p className="card-text">
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                  <a
-                    href="https://anjithsaju.github.io/sighinAS.github.io/"
-                    target="_blank"
-                    className="btn btn-danger"
-                  >
-                    Visit Site
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="hologram">
-              {/* <img
-                style={{ width: "100%", height: "100%" }}
-                src="./src/Images/holo.png"
-                alt=""
-              /> */}
-              <div id="crd" className="card">
-                <img
-                  src="https://i.postimg.cc/3RqXFps7/link.png"
-                  className="card-img-top"
-                  alt=""
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Linktree</h5>
-                  <p className="card-text">
-                    {" "}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                  <a
-                    href="https://anjithsaju.github.io/Linktree/"
-                    target="_blank"
-                    className="btn btn-danger"
-                  >
-                    Visit Site
-                  </a>
-                  {/* <a
-                href="https://anjithsaju.github.io/Linktree/"
-                target="_blank"
-                className="btn btn-info"
-                style={{ marginLeft: "1.1vw" }}
-                >
-                View Code
-                </a> */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-export default Works; -->
+      .content {
+        height: 2000px; /* Extra height to demonstrate scrolling */
+        padding: 20px;
+        background-color: #282c34;
+        color: white;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 20px; /* Set the width of the scrollbar */
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #282c34; /* Background of the scrollbar track */
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: url("https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg")
+          no-repeat center center; /* Set your image here */
+        background-size: contain; /* Ensure the image fits within the thumb */
+        border-radius: 10px; /* Round the edges */
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: url("https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg")
+          no-repeat center center; /* Optional: Hover image */
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Custom Scrollbar with an Image</h1>
+      <p>
+        Scroll down to see the custom scrollbar in action. Replace the image in
+        the CSS with your desired icon or graphic.
+      </p>
+      <p>Add your content here...</p>
+    </div>
+  </body>
+</html>

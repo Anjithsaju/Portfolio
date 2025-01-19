@@ -1,5 +1,5 @@
 import Starwars from "./Components/Starwars";
-import Dino from "./Components/Dino";
+
 function App() {
   return (
     <>

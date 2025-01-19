@@ -72,7 +72,7 @@ const Experience: React.FC = () => {
   </div>
 </section>
 
-      <img className="saber" src="./src/Images/lightsaber.png" alt="" />
+      <img className="saber" src="https://i.postimg.cc/yYm5MGLf/lightsaber.png" alt="" />
       </div>
     </>
   );

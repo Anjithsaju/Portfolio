@@ -1,0 +1,22 @@
+.containeryoda {
+  display: flex;
+  height: inherit;
+  width: inherit;
+  align-items: center;
+  flex-direction: row;
+}
+.mainyoda {
+  background: red;
+  width: 70%;
+  height: 42vw;
+}
+.yoda {
+  background: url(./src/Images/yoda.png);
+  background-size: 94%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  /* padding: 20px; */
+  height: inherit;
+  border: none;
+}

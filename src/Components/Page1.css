@@ -76,7 +76,9 @@ nav {
   font-weight: 400;
   font-style: normal;
 }
-
+#page1 {
+  cursor: url("https://toppng.com/uploads/preview/red-lightsaber-png-image-red-lightsaber-11563607427tg1jfurqd6.png");
+}
 #page4,
 #page5 {
   height: 100vh;
@@ -88,9 +90,9 @@ nav {
 #page4 {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
+  /* background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
     url("https://i.postimg.cc/W1w5grVb/Star-Wars-spaceship-Imperial-Forces-digital-art-science-fiction-Star-Wars-Ships-1552607-wallhere-com.jpg");
-  background-size: cover;
+  background-size: cover; */
   background-position: top;
 }
 #page2 {

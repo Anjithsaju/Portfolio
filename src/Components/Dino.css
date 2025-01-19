@@ -1,0 +1,18 @@
+#dino {
+  transition: bottom 100ms;
+  width: 180px;
+  position: relative;
+
+  bottom: 0px;
+  height: 30%;
+  width: auto;
+}
+.cont {
+  background: url("https://media.baamboozle.com/uploads/images/150029/1657803593_229886_gif-url.gif");
+  height: 69vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-end;
+  background-position: bottom;
+  background-repeat: repeat-x;
+}

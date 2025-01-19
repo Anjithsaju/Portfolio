@@ -1,37 +1,131 @@
-.vertical-line {
-  border-left: 3px solid white;
-  height: 100%;
-  margin: 25px;
-  border-radius: 10px;
-}
-
-.main {
-  height: 41vw;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.div1,
-.div2 {
-  width: 30%;
-  padding: 0.5%;
-  color: white;
-  border: 2px solid white;
-  background: #00000096;
-  backdrop-filter: blur(20px);
+/* .main img{
+  margin-left: 36px;
+  height: 23vw;
+  border:3px solid #214244;
+  width: 23vw;
+  border-radius: 50%;
+  transition: 0.3s;
+} */
+.saber
+{
   position: relative;
-  height: 34%;
-  border-radius: 1% 16%;
-  font-size: 98%;
+    top: -17vw;
+    width: 120vw;
+    left: -16vw;
+}
+.main img{
+  width: 19vw;
+}
+.section1
+{
+  width: 100vw;
+  display: flex
+;
+  margin-left: 5vw;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  scale: 0.9;
+  z-index: 2;
+
+}
+.main{
+  display: flex
+  ;
+      flex-direction: row;
+      gap: -17px;
+      align-items: center;
+}
+.main div
+{
+  animation: scale-in 0.8s ease-out;
+  transition: 0.3s;
+  left: -183px;
+  position: relative;
+  background: #0000007a;
+  border-radius: 10px;
+  width: 28vw;
+  padding: 20px;
+  height: 395px;
+  backdrop-filter: blur(40px);
+  color: #a7a7a7;
+  border: 2px solid #ffffff26;
+}
+.main p{
+  margin: 18px;
+  font-size: 152%;
+  font-family: "Poppins", sans-serif;
+}
+/* .main.down img{
+  width: 15vw;
+  height: 15vw;
+  transition: 0.3s; 
+  border:3px solid #214244;
+  
+  border-radius: 50%;
+
+} */
+.main.down div
+{
+  animation: scale-down-animation 0.5s ease-in-out forwards;
+  display: none;
 }
 
-.div1 {
-  top: -33%;
+.hover-image {
+  transition: 0.3s; 
 }
 
-.div2 {
-  top: 33%;
+/* .hover-image:hover {
+  content: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXBvcnM5emJ6OXQzN21jenRzMmQyMzdidHQyYmFqMHczemtlaHFndiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6nUOYv0foIqQJRzq/giphy.gif'); 
+}
+.hover-image3:hover {
+  content:url(./src/Images/mastermov.gif);
+}
+.hover-image2:hover {
+  content:url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWFtcDQwdmIxaHh6eHg1M3RycDdvazdvcnB3cWw1bWg1MGV2bzZ0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiIzvnJn0oIpOkUrS/giphy.gif');
+} */
+/* Define the animation */
+@keyframes scale-in {
+  0% {
+    transform: scale(0); /* Start completely scaled down */
+    opacity: 0; /* Fully transparent */
+  }
+
+  50% {
+    transform: scale(1); /* Slightly overshoot for a bounce effect */
+    opacity: 1; /* Fade in */
+  }
+}
+
+/* Apply the animation */
+.scale-in {
+  animation: scale-in 1s ease-out; /* Duration and easing */
+  transform-origin: center; /* Scale from the center */
+}
+/* Define the scale-down animation */
+@keyframes scale-down-animation {
+  0% {
+    transform: scale(1); /* Start at normal size */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: scale(0); /* End at scaled down (invisible) */
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Class to trigger the animation */
+.scale-down {
+  animation: scale-down-animation 0.5s ease-in-out forwards; /* Duration, easing, and keep final state */
+}
+
+.thi
+{
+  display: flex
+  ;
+      flex-direction: column;
+     
+      justify-content: space-evenly;
+}
+.thi h1{
+  color: #ffd700;
 }

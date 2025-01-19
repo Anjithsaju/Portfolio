@@ -2,9 +2,11 @@ import "./Page1.css";
 import ScrollAnimation from "./ScrollAnimation";
 import Works from "./Works";
 import { useEffect, useState } from "react";
-// import Experience from "./Experience";
+import Experience from "./Experience";
+import Dino from "./Dino";
 // import Home from "./Scroll";
 // import Car from "./test";
+import Yodastory from "./YodaStory";
 function Starwars() {
   useEffect(() => {
     const handleScroll = () => {
@@ -64,6 +66,26 @@ function Starwars() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
+  const [cursorChanged, setCursorChanged] = useState(false);
+
+  const handleButtonClick = () => {
+    setCursorChanged(!cursorChanged);
+  };
+
+  // Apply custom cursor styles dynamically
+  useEffect(() => {
+    if (cursorChanged) {
+      document.body.style.cursor =
+        "url(https://toppng.com/uploads/preview/red-lightsaber-png-image-red-lightsaber-11563607427tg1jfurqd6.png)";
+    } else {
+      document.body.style.cursor = "auto";
+    }
+
+    // Cleanup on component unmount or when cursorChanged changes
+    return () => {
+      document.body.style.cursor = "auto";
+    };
+  }, [cursorChanged]);
 
   return (
     <>
@@ -141,14 +163,20 @@ function Starwars() {
         <Works></Works>
       </section>
       <section id="page4">
+        {/* <Yodastory></Yodastory> */}
         {/* <img src="./src/Images/yoda.png" alt="" /> */}
-        {/* <Experience></Experience> */}
+        
+        <Experience></Experience>
         {/* <div className="data">
           <Home></Home>
         </div> */}
       </section>
       <section id="page5">
         {/* <Car></Car> */}
+        {/* <button onClick={handleButtonClick}>
+          {cursorChanged ? "Reset Cursor" : "Change Cursor"}
+        </button> */}
+        {/* <Dino></Dino> */}
         {/* <Timeline></Timeline> */}
         hello{/* <ScrollAnimation></ScrollAnimation> */}
       </section>

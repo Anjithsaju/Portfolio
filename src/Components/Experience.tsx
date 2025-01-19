@@ -18,7 +18,7 @@ const Experience: React.FC = () => {
   {/* First div */}
   <div className={activeIndex === 0 ? "main" : "main down"}>
     <img
-      src="./src/Images/childd.png"
+      src="https://i.postimg.cc/wMFjs7nC/childd.png"
       className="hover-image"
       alt="padwan"
       style={{ width: "19vw" }} // Fixed style syntax
@@ -36,7 +36,7 @@ const Experience: React.FC = () => {
   {/* Second div */}
   <div className={activeIndex === 1 ? "main" : "main down"}>
     <img
-      src="./src/Images/knight.png"
+      src="https://i.postimg.cc/HnTLxQv0/knight.png"
       alt="Knight"
       className="hover-image2"
       style={{ width: "24vw" ,position: "relative",
@@ -55,7 +55,7 @@ const Experience: React.FC = () => {
   {/* Third div */}
   <div className={activeIndex === 2 ? "main" : "main down"}>
     <img
-      src="./src/Images/mas.png"
+      src="https://i.postimg.cc/0QYQPtn2/mas.png"
       className="hover-image3"
       alt="padwan"
       style={{ width: "34vw",position: "relative",

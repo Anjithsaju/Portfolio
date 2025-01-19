@@ -1,12 +1,9 @@
 import "./Dino.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect} from "react";
 function Dino() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    const sleep = (ms: number) => {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    };
-
+    
     // Async function to handle the sleep and then update the message
 
     // const [bottom, setCount] = useState(0);

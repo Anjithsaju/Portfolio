@@ -1,7 +1,5 @@
 import "./Works.css";
-// interface Props {
-//   workclass: string; // Add the pid prop to the Props interface
-// }
+
 function Works() {
   return (
     <>
@@ -10,12 +8,12 @@ function Works() {
           <img
             src="https://i.postimg.cc/bJwgTqd0/split.png"
             className="card-img-top"
-            alt=""
+            alt="Split-App"
           />
           <div className="card-body">
             <h5 className="card-title">Split-App</h5>
             <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Split group expenses and track balances with ease.
             </p>
             <a
               href="https://anjithsaju.github.io/"
@@ -26,19 +24,20 @@ function Works() {
             </a>
           </div>
         </div>
+
         <div id="crd" className="card">
           <img
-            src="https://i.postimg.cc/LsNBhGvJ/expense.png"
+            src="https://i.postimg.cc/t4x05cgx/Screenshot-2025-04-17-232540.png"
             className="card-img-top"
-            alt=""
+            alt="Baaki Pinne Tharam"
           />
           <div className="card-body">
-            <h5 className="card-title">Expense Tracker</h5>
+            <h5 className="card-title">Baaki Pinne Tharam</h5>
             <p className="card-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Curious??....Check out the site to know more.
             </p>
             <a
-              href="https://anjithsaju.github.io/Expenses/"
+              href="https://baakipinnetharam.vercel.app/"
               target="_blank"
               className="btn btn-danger"
             >
@@ -46,17 +45,17 @@ function Works() {
             </a>
           </div>
         </div>
+
         <div id="crd" className="card">
           <img
             src="https://i.postimg.cc/D0bqj0hG/sign.png"
             className="card-img-top"
-            alt=""
+            alt="Talents"
           />
           <div className="card-body">
-            <h5 className="card-title">Sign in</h5>
+            <h5 className="card-title">Talents</h5>
             <p className="card-text">
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              A platform to post and discover unique talents.
             </p>
             <a
               href="https://anjithsaju.github.io/sighinAS.github.io/"
@@ -67,37 +66,30 @@ function Works() {
             </a>
           </div>
         </div>
+
         <div id="crd" className="card">
           <img
-            src="https://i.postimg.cc/3RqXFps7/link.png"
+            src="https://i.postimg.cc/8CR28rMk/Screenshot-2025-04-17-232610.png"
             className="card-img-top"
-            alt=""
+            alt="THEIA"
           />
           <div className="card-body">
-            <h5 className="card-title">Linktree</h5>
+            <h5 className="card-title">THEIA</h5>
             <p className="card-text">
-              {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              AI-powered device to help the visually impaired.
             </p>
             <a
-              href="https://anjithsaju.github.io/Linktree/"
+              href="https://theia-pied.vercel.app/"
               target="_blank"
               className="btn btn-danger"
             >
               Visit Site
             </a>
-            {/* <a
-                href="https://anjithsaju.github.io/Linktree/"
-                target="_blank"
-                className="btn btn-info"
-                style={{ marginLeft: "1.1vw" }}
-                >
-                View Code
-                </a> */}
           </div>
         </div>
       </div>
     </>
   );
 }
+
 export default Works;

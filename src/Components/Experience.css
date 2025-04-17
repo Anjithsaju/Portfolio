@@ -12,6 +12,7 @@
     top: -17vw;
     width: 120vw;
     left: -16vw;
+   
 }
 .main img{
   width: 19vw;
@@ -128,4 +129,57 @@
 }
 .thi h1{
   color: #ffd700;
+}
+/* Default styles for the div box */
+.main div {
+  position: absolute; /* Keep the element positioned absolutely */
+  top: 47vw; /* Initial top position */
+  left: -39vw; /* Initial left position */
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  transform: translate(-16vw, 11vw); /* Default transform (no movement) */
+  width: 100vw;
+  background: red;
+  background: linear-gradient(53deg, #ff0000, #ffef00);
+  border-radius: 0;
+  height: 115vh;
+  clip-path: polygon(56% 0%, 63% -10%, 31% 88%, -16% 90%);
+}
+
+/* Move the info box when active */
+.main.active div {
+  transform: translate(45vw, -44vw); /* Move to the desired position smoothly */
+}
+
+
+/* Optional: Different positions for other divs */
+.main div {
+  top: 36vw;
+  left: -56vw; /* Reset for inactive state */
+}
+
+/* Hover styles */
+.hover-image {
+  cursor: pointer;
+}
+
+/* Additional styles */
+/* Initial state of the .ship */
+/* Initial state of the .ship */
+.main .ship {
+  position: absolute;
+  z-index: 5;
+  transform: rotate(337deg) scale(2.5); /* Combine rotate and scale */
+  top: 50vw;
+    left: -40vw;
+  transition: transform 0.5s ease-in-out, top 0.5s ease, left 0.5s ease; /* Add transition */
+}
+
+/* When the .main element has the active class */
+.main.active .ship {
+  position: absolute;
+  z-index: 5;
+  transform: rotate(337deg) scale(1); /* Combine rotate and scale */
+  top: -16vw;
+  left: 38.5vw;
+  transition: transform 0.5s ease-in-out, top 0.5s ease, left 0.5s ease; /* Ensure transition on active state */
 }

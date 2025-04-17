@@ -88,12 +88,14 @@ nav {
   background-position: center;
 }
 #page4 {
+  overflow: hidden;
   min-height: 100vh;
   width: 100vw;
   /* background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
     url("https://i.postimg.cc/W1w5grVb/Star-Wars-spaceship-Imperial-Forces-digital-art-science-fiction-Star-Wars-Ships-1552607-wallhere-com.jpg");
   background-size: cover; */
   background-position: top;
+  clip-path: inset(-1 0 0% 0);
 }
 #page2 {
   min-height: 100vh;

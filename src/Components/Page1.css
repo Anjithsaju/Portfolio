@@ -126,10 +126,44 @@ nav {
   justify-content: space-evenly;
   background: linear-gradient(9deg, rgb(0 0 0), rgb(0 0 0 / 26%)),
     url(https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg);
+     /* background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
+    url("https://i.postimg.cc/W1w5grVb/Star-Wars-spaceship-Imperial-Forces-digital-art-science-fiction-Star-Wars-Ships-1552607-wallhere-com.jpg");
+  background-size: cover; */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
 }
+.torch-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.97);
+  mask-image: radial-gradient(circle 200px at 0 0, transparent 0%, black 100%);
+  -webkit-mask-image: radial-gradient(circle 200px at 0 0, transparent 0%, black 100%);
+  pointer-events: none;
+  z-index: 99999;
+}
+.torch-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px 30px;
+  border: 2px solid #facc15; /* yellow border */
+  border-radius: 10px;
+  z-index: 100000;
+  animation: fadeInOut 12s ease-in-out;
+  max-width: 90%;
+  text-align: center;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 .content {
   width: clamp(2%, 101vh, 100%);
   color: #ffffffa6;

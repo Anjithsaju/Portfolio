@@ -1,185 +1,144 @@
-/* .main img{
-  margin-left: 36px;
-  height: 23vw;
-  border:3px solid #214244;
-  width: 23vw;
-  border-radius: 50%;
-  transition: 0.3s;
-} */
-.saber
-{
-  position: relative;
-    top: -17vw;
-    width: 120vw;
-    left: -16vw;
-   
+/* === Layout and Section Styles === */
+.thi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.main img{
-  width: 19vw;
+
+.experience-title {
+  color: yellow;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 2.8vw;
+  margin-bottom: 2vw;
 }
-.section1
-{
+
+.section1 {
   width: 100vw;
-  display: flex
-;
+  display: flex;
   margin-left: 5vw;
   justify-content: space-evenly;
   align-items: flex-end;
   scale: 0.9;
   z-index: 2;
+}
 
+/* === Image and Stage Styles === */
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.main{
-  display: flex
-  ;
-      flex-direction: row;
-      gap: -17px;
-      align-items: center;
-}
-.main div
-{
-  animation: scale-in 0.8s ease-out;
+
+.main img {
+  width: 19vw;
   transition: 0.3s;
-  left: -183px;
-  position: relative;
-  background: #0000007a;
-  border-radius: 10px;
-  width: 28vw;
-  padding: 20px;
-  height: 395px;
-  backdrop-filter: blur(40px);
-  color: #a7a7a7;
-  border: 2px solid #ffffff26;
-}
-.main p{
-  margin: 18px;
-  font-size: 152%;
-  font-family: "Poppins", sans-serif;
-}
-/* .main.down img{
-  width: 15vw;
-  height: 15vw;
-  transition: 0.3s; 
-  border:3px solid #214244;
-  
-  border-radius: 50%;
-
-} */
-.main.down div
-{
-  animation: scale-down-animation 0.5s ease-in-out forwards;
-  display: none;
-}
-
-.hover-image {
-  transition: 0.3s; 
-}
-
-/* .hover-image:hover {
-  content: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXBvcnM5emJ6OXQzN21jenRzMmQyMzdidHQyYmFqMHczemtlaHFndiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6nUOYv0foIqQJRzq/giphy.gif'); 
-}
-.hover-image3:hover {
-  content:url(./src/Images/mastermov.gif);
-}
-.hover-image2:hover {
-  content:url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWFtcDQwdmIxaHh6eHg1M3RycDdvazdvcnB3cWw1bWg1MGV2bzZ0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiIzvnJn0oIpOkUrS/giphy.gif');
-} */
-/* Define the animation */
-@keyframes scale-in {
-  0% {
-    transform: scale(0); /* Start completely scaled down */
-    opacity: 0; /* Fully transparent */
-  }
-
-  50% {
-    transform: scale(1); /* Slightly overshoot for a bounce effect */
-    opacity: 1; /* Fade in */
-  }
-}
-
-/* Apply the animation */
-.scale-in {
-  animation: scale-in 1s ease-out; /* Duration and easing */
-  transform-origin: center; /* Scale from the center */
-}
-/* Define the scale-down animation */
-@keyframes scale-down-animation {
-  0% {
-    transform: scale(1); /* Start at normal size */
-    opacity: 1; /* Fully visible */
-  }
-  100% {
-    transform: scale(0); /* End at scaled down (invisible) */
-    opacity: 0; /* Fade out */
-  }
-}
-
-/* Class to trigger the animation */
-.scale-down {
-  animation: scale-down-animation 0.5s ease-in-out forwards; /* Duration, easing, and keep final state */
-}
-
-.thi
-{
-  display: flex
-  ;
-      flex-direction: column;
-     
-      justify-content: space-evenly;
-}
-.thi h1{
-  color: #ffd700;
-}
-/* Default styles for the div box */
-.main div {
-  position: absolute; /* Keep the element positioned absolutely */
-  top: 47vw; /* Initial top position */
-  left: -39vw; /* Initial left position */
-  transition: transform 0.5s ease-in-out; /* Smooth transition */
-  transform: translate(-16vw, 11vw); /* Default transform (no movement) */
-  width: 100vw;
-  background: red;
-  background: linear-gradient(53deg, #ff0000, #ffef00);
-  border-radius: 0;
-  height: 115vh;
-  clip-path: polygon(56% 0%, 63% -10%, 31% 88%, -16% 90%);
-}
-
-/* Move the info box when active */
-.main.active div {
-  transform: translate(45vw, -44vw); /* Move to the desired position smoothly */
-}
-
-
-/* Optional: Different positions for other divs */
-.main div {
-  top: 36vw;
-  left: -56vw; /* Reset for inactive state */
-}
-
-/* Hover styles */
-.hover-image {
   cursor: pointer;
 }
 
-/* Additional styles */
-/* Initial state of the .ship */
-/* Initial state of the .ship */
+.saber {
+  position: relative;
+  top: -17vw;
+  width: 120vw;
+  left: -16vw;
+}
+
+/* === Hover Panel (Hologram) === */
+.holo-panel {
+  position: absolute;
+  bottom: -6vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22vw;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  font-family: 'Orbitron', sans-serif;
+  padding: 1vw;
+  border-radius: 1vw;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px #00ffff;
+  z-index: 10;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.holo-panel h2 {
+  margin-top: 0;
+  font-size: 1.4vw;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.holo-panel p {
+  font-size: 1vw;
+  margin-top: 0.5vw;
+  line-height: 1.4;
+}
+
+/* === Animation Effects === */
+@keyframes scale-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  animation: scale-in 1s ease-out;
+  transform-origin: center;
+}
+
+@keyframes scale-down-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.scale-down {
+  animation: scale-down-animation 0.5s ease-in-out forwards;
+}
+
+.main.down div {
+  display: none;
+}
+
+/* === Ship Animation (Optional Element) === */
 .main .ship {
   position: absolute;
   z-index: 5;
-  transform: rotate(337deg) scale(2.5); /* Combine rotate and scale */
+  transform: rotate(337deg) scale(2.5);
   top: 50vw;
-    left: -40vw;
-  transition: transform 0.5s ease-in-out, top 0.5s ease, left 0.5s ease; /* Add transition */
+  left: -40vw;
+  transition: transform 0.5s ease-in-out, top 0.5s ease, left 0.5s ease;
 }
 
-/* When the .main element has the active class */
 .main.active .ship {
-  position: absolute;
-  z-index: 5;
-  transform: rotate(337deg) scale(1); /* Combine rotate and scale */
+  transform: rotate(337deg) scale(1);
   top: -16vw;
   left: 38.5vw;
-  transition: transform 0.5s ease-in-out, top 0.5s ease, left 0.5s ease; /* Ensure transition on active state */
+}
+
+/* === Optional: Large Holo Info Box (Unused But Retained If Needed) === */
+.main div {
+  position: absolute;
+  top: 36vw;
+  left: -56vw;
+  transform: translate(-16vw, 11vw);
+  transition: transform 0.5s ease-in-out;
+  width: 100vw;
+  height: 115vh;
+  background: linear-gradient(53deg, #ff0000, #ffef00);
+  clip-path: polygon(56% 0%, 63% -10%, 31% 88%, -16% 90%);
+  border-radius: 0;
+}
+
+.main.active div {
+  transform: translate(45vw, -44vw);
 }

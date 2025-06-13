@@ -3,8 +3,17 @@ import ScrollAnimation from "./ScrollAnimation";
 import Works from "./Works";
 import { useEffect, useState } from "react";
 import Experience from "./Experience";
+import Transmission from "./page5";
+import { useTorch } from "./TorchContext";
 
 function Starwars() {
+  const { torchOn, setTorchOn } = useTorch();
+  const [showMessage, setShowMessage] = useState(true);
+  const [showCongrats, setShowCongrats] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // All useEffect hooks go here, inside the function!
   useEffect(() => {
     const handleScroll = () => {
       const sections: NodeListOf<HTMLElement> =
@@ -34,13 +43,16 @@ function Starwars() {
     };
 
     window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  useEffect(() => {
+    if (torchOn) {
+      setShowMessage(true);
+      const timer = setTimeout(() => setShowMessage(false), 12000);
+      return () => clearTimeout(timer);
+    }
+  }, [torchOn]);
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -55,6 +67,67 @@ function Starwars() {
 
     setLastScrollY(currentScrollY);
   };
+  useEffect(() => {
+    // Torch/cursor effect only if torchOn is true
+    if (!torchOn) {
+      // Remove custom cursor if not active
+      document.body.style.cursor = "";
+      const cursorImg = document.getElementById("custom-cursor-img");
+      if (cursorImg) cursorImg.remove();
+      return;
+    }
+
+    document.body.style.cursor = "none";
+    let cursorImg = document.getElementById("custom-cursor-img") as HTMLImageElement | null;
+    if (!cursorImg) {
+      cursorImg = document.createElement("img");
+      cursorImg.id = "custom-cursor-img";
+      cursorImg.src = "./src/Images/lightsaber.png";
+      cursorImg.style.position = "fixed";
+      cursorImg.style.pointerEvents = "none";
+      cursorImg.style.zIndex = "9999";
+      cursorImg.style.width = "100px";
+      cursorImg.style.height = "48px";
+      cursorImg.style.transition = "transform 0.07s";
+      cursorImg.style.transform = "rotate(-140deg)";
+      document.body.appendChild(cursorImg);
+    }
+
+    const moveCursor = (e: MouseEvent) => {
+      if (cursorImg) {
+        cursorImg.style.left = `${e.clientX - 50}px`;
+        cursorImg.style.top = `${e.clientY - 24}px`;
+      }
+    };
+
+    window.addEventListener("mousemove", moveCursor);
+
+    return () => {
+      document.body.style.cursor = "";
+      if (cursorImg) cursorImg.remove();
+      window.removeEventListener("mousemove", moveCursor);
+    };
+  }, [torchOn]);
+
+
+
+  // Torch overlay effect
+  useEffect(() => {
+    if (!torchOn) return;
+    const overlay = document.querySelector(".torch-overlay");
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      if (overlay) {
+        (overlay as HTMLElement).style.maskImage = `radial-gradient(circle 200px at ${x}px ${y}px, transparent 0%, black 100%)`;
+        (overlay as HTMLElement).style.webkitMaskImage = `radial-gradient(circle 200px at ${x}px ${y}px, transparent 0%, black 100%)`;
+      }
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [torchOn]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -64,9 +137,66 @@ function Starwars() {
     };
   }, [lastScrollY]);
 
+  // ESC key listener to turn off torch
+  useEffect(() => {
+    if (!torchOn) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setTorchOn(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [torchOn, setTorchOn]);
+
+  // Handler for Yoda click
+  const handleYodaClick = () => {
+    setTorchOn(false);
+    setShowCongrats(true);
+    setTimeout(() => setShowCongrats(false), 4000); // Hide after 2s
+  };
 
   return (
+
     <>
+{torchOn && (
+  <>
+    <div className="torch-overlay">
+       {showMessage && (
+      <div className="torch-message">
+        <h4 className="!text-yellow-400 text-center">
+          🔦 <em>Jedi Trial Initiated...</em><br />
+          Seek the name <span className="text-green-400 font-bold">Yoda</span> hidden in this website.<br />
+          Click that to reveal the site back... or press <span className="text-red-400">Escape</span> to abort the mission.    Good Luck
+        </h4>
+      </div>
+    )}
+    </div>
+   
+  </>
+)}
+
+{/* Simple congrats popup */}
+      {showCongrats  && (
+        <div className="torch-message" style={{
+          position: "fixed",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-50%)",
+          zIndex: 100000,
+          background: "rgba(0,0,0,0.92)",
+          color: "#7fff00",
+          borderRadius: "1rem",
+          padding: "2rem 2.5rem",
+          textAlign: "center",
+          fontSize: "1.5rem",
+          fontWeight: 700,
+          boxShadow: "0 0 24px #00fff7cc"
+        }}>
+          🎉 Congratulations, Padawan! <br />You have found Yoda!
+        </div>
+      )}
+
       <nav
         style={{ position: "fixed" }}
         className={` navbar1 ${isVisible ? "visible" : "hidden"}  `}
@@ -105,8 +235,18 @@ function Starwars() {
         {/* <img src="./src/Images/data.jpg" alt="" /> */}
 
         <div className="content">
-          <h4> "Do or do not. There is no try." — Yoda</h4>
-          <div>
+  <h4>
+            "Do or do not. There is no try." —{" "}
+            <span
+              style={{ cursor: "pointer", textDecoration: "none" }}
+              onClick={handleYodaClick}
+              tabIndex={0}
+              onKeyDown={e => { if (e.key === "Enter" || e.key === " ") handleYodaClick(); }}
+              aria-label="Turn off torch effect"
+            >
+              Yoda
+            </span>
+          </h4>          <div>
             <a id="stupid" href="https://youtu.be/frszEJb0aOo?feature=shared">
               <h5> Hello there!</h5>
             </a>
@@ -140,7 +280,7 @@ function Starwars() {
         <h4>My Quests</h4>
         <Works></Works>
       </section>
-      <section id="page4">
+      <section id="page4" className="overflow-hidden">
         {/* <Yodastory></Yodastory> */}
         {/* <img src="./src/Images/yoda.png" alt="" /> */}
         
@@ -156,9 +296,10 @@ function Starwars() {
         </button> */}
         {/* <Dino></Dino> */}
         {/* <Timeline></Timeline> */}
-        hello{/* <ScrollAnimation></ScrollAnimation> */}
+        <Transmission></Transmission>
       </section>
     </>
   );
 }
+
 export default Starwars;

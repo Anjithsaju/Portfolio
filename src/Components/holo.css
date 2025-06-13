@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap'); /* optional sci-fi font */
+
+@font-face {
+  font-family: 'Aurebesh';
+  src: url('/src/fonts/aurebesh.otf') format('opentype'); /* You’ll need to add an Aurebesh font */
+}
+
+.holo-card {
+  position: relative;
+  width: 340px;
+  height: 210px;
+  border-radius: 18px;
+ background: #000000ad;
+
+    backdrop-filter: blur(4px);
+  box-shadow:
+    0 2px 24px 0 rgba(0,255,255,0.15),
+    0 0 0 2px rgba(0,255,255,0.25) inset;
+  border: 2px solid rgba(255,255,255,0.18);
+  overflow: hidden;
+  z-index: 3;
+ 
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.holo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 2.5px solid rgba(0,255,255,0.25);
+  box-shadow:
+    0 0 18px 2px rgba(0,255,255,0.18),
+    0 0 0 4px rgba(255,255,255,0.08) inset;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.holo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, rgba(255,255,255,0.12) 10%, transparent 70%);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.holo-card:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+
+.holo-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.08),
+    rgba(0, 255, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  z-index: 4;
+}
+
+.holo-content {
+  position: relative;
+  z-index: 5;
+  padding: 22px 18px 12px 18px;
+  color: #e0f7fa;
+  font-family: 'Aurebesh', 'Share Tech Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 0 8px #00fff7, 0 0 2px #fff;
+}
+
+.aurebesh {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  opacity: 0.95;
+  text-shadow: 0 0 8px #fff, 0 0 2px #00fff7;
+}
+
+.holo-symbol {
+  width: 48px;
+  height: 48px;
+  background: url('/src/Images/rebel-symbol.png') center/contain no-repeat;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+.holo-fingerprint {
+  width: 54px;
+  height: 54px;
+  background: url('/src/Images/fingerprint.png') center/contain no-repeat;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}

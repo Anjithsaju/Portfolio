@@ -1,14 +1,18 @@
 import Starwars from "./Components/Starwars";
+import { TorchProvider } from "./Components/TorchContext";
 
 function App() {
   return (
-    <>
-      {/* <Theone></Theone> */}
-      {/* <Dino></Dino> */}
-      <Starwars></Starwars>
-      {/* <Intro></Intro> */}
-      {/* <Works></Works> */}
-    </>
+    
+    <TorchProvider>
+      <>
+        {/* <Theone></Theone> */}
+        {/* <Dino></Dino> */}
+        <Starwars></Starwars>
+        {/* <Intro></Intro> */}
+        {/* <Works></Works> */}
+      </>
+    </TorchProvider>
   );
 }
 

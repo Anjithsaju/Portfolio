@@ -1,31 +1,55 @@
-(function() { // Game configuration const config = { SPEED: 6, GRAVITY: 0.6,
-JUMP_SPEED: -10, GROUND_Y: 200, DINO_WIDTH: 44, DINO_HEIGHT: 47, OBSTACLE_WIDTH:
-20, OBSTACLE_HEIGHT: 40, OBSTACLE_GAP: 200 }; let canvas, ctx; let dino, ground,
-obstacles = []; let isJumping = false, jumpVelocity = 0; // Initialize the game
-function init() { canvas = document.createElement('canvas');
-document.body.appendChild(canvas); canvas.width = 600; canvas.height = 300; ctx
-= canvas.getContext('2d'); // Dino dino = { x: 50, y: config.GROUND_Y, width:
-config.DINO_WIDTH, height: config.DINO_HEIGHT }; // Ground ground = { x: 0, y:
-config.GROUND_Y + config.DINO_HEIGHT, width: canvas.width, height: 10 }; //
-Event listeners document.addEventListener('keydown', function(event) { if
-(event.code === 'Space' && !isJumping) { isJumping = true; jumpVelocity =
-config.JUMP_SPEED; } }); // Game loop setInterval(update, 1000 / 60); } //
-Update game state function update() { // Move ground ground.x -= config.SPEED;
-if (ground.x <= -canvas.width) ground.x = 0; // Dino jump if (isJumping) {
-dino.y += jumpVelocity; jumpVelocity += config.GRAVITY; if (dino.y >=
-config.GROUND_Y) { dino.y = config.GROUND_Y; isJumping = false; } } // Spawn
-obstacles if (Math.random() < 0.02) { obstacles.push({ x: canvas.width, y:
-config.GROUND_Y, width: config.OBSTACLE_WIDTH, height: config.OBSTACLE_HEIGHT
-}); } // Move and remove obstacles obstacles = obstacles.map(obstacle => {
-obstacle.x -= config.SPEED; return obstacle; }).filter(obstacle => obstacle.x +
-obstacle.width > 0); // Check for collisions obstacles.forEach(obstacle => { if
-(dino.x < obstacle.x + obstacle.width && dino.x + dino.width > obstacle.x &&
-dino.y < obstacle.y + obstacle.height && dino.y + dino.height > obstacle.y) {
-alert('Game Over!'); document.location.reload(); } }); // Render the game
-render(); } // Render game objects function render() { // Clear canvas
-ctx.clearRect(0, 0, canvas.width, canvas.height); // Draw ground ctx.fillStyle =
-'#000'; ctx.fillRect(ground.x, ground.y, ground.width, ground.height); // Draw
-Dino ctx.fillStyle = '#000'; ctx.fillRect(dino.x, dino.y, dino.width,
-dino.height); // Draw obstacles obstacles.forEach(obstacle => { ctx.fillStyle =
-'#555'; ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-}); } // Start the game init(); })();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Torchlight Effect</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('https://picsum.photos/1200/800') no-repeat center center/cover;
+      font-family: sans-serif;
+    }
+
+    .mask-layer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.98);
+      mask-image: radial-gradient(circle 100px at 0 0, transparent 0%, black 100%);
+      -webkit-mask-image: radial-gradient(circle 100px at 0 0, transparent 0%, black 100%);
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    h1 {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-shadow: 0 0 10px black;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Move your mouse to reveal the light</h1>
+  <div class="mask-layer"></div>
+
+  <script>
+    const maskLayer = document.querySelector('.mask-layer');
+
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      maskLayer.style.maskImage = `radial-gradient(circle 100px at ${x}px ${y}px, transparent 0%, black 100%)`;
+      maskLayer.style.webkitMaskImage = `radial-gradient(circle 100px at ${x}px ${y}px, transparent 0%, black 100%)`;
+    });
+  </script>
+</body>
+</html>

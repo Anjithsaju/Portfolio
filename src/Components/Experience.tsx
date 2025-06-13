@@ -31,7 +31,6 @@ const experiences = [
   },
 ];
 
-const SHIP_URL = "https://starwars-visualguide.com/assets/img/vehicles/17.jpg";
 
 const Experience: React.FC = () => {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -351,28 +350,5 @@ const Experience: React.FC = () => {
 };
 
 // Simple starfield background component
-function Starfield() {
-  // Generate random stars
-  const stars = Array.from({ length: 120 }).map((_, i) => {
-    const size = Math.random() * 2 + 1;
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    const opacity = Math.random() * 0.7 + 0.3;
-    return (
-      <div
-        key={i}
-        style={{
-          width: size,
-          height: size,
-          top: `${top}%`,
-          left: `${left}%`,
-          opacity,
-        }}
-        className="absolute bg-white rounded-full pointer-events-none"
-      />
-    );
-  });
-  return <div className="absolute inset-0 z-0">{stars}</div>;
-}
 
 export default Experience;

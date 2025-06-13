@@ -8,7 +8,7 @@ export default function Transmission() {
   return (
     <section
       style={{
-        background: 'linear-gradient(197deg, rgb(0 0 0 / 80%), rgba(0, 0, 0, 0.5)), url(/src/Images/darthvader.jpg)',
+        background: 'linear-gradient(197deg, rgb(0 0 0 / 80%), rgba(0, 0, 0, 0.5)), url(https://i.postimg.cc/0Nv7H206/darthvader.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'right center',
         backgroundRepeat: 'no-repeat',
@@ -34,7 +34,7 @@ export default function Transmission() {
       <div className="max-w-3xl animate-fade-in-left ">
         <img
           className="absolute md:top-[5vw] top-[22vw] left-[-15px] opacity-70 cursor-pointer"
-          src="./src/Images/lightsaber.png"
+          src="https://i.postimg.cc/fRndJTFH/lightsaber.png"
           alt=""
           onClick={() => setTorchOn(true)}
         />
@@ -45,7 +45,7 @@ export default function Transmission() {
          mixBlendMode: "color-dodge",
          top: "8vw"
        }}
-       src="./src/Images/click.png"
+       src="https://i.postimg.cc/7Z0gVT08/click.png"
        alt="click on lightsaber"
      />
         {/* Large Main Heading */}

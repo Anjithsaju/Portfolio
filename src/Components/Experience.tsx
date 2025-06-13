@@ -237,7 +237,7 @@ const Experience: React.FC = () => {
           onPointerDown={onPointerDown}
         >
           <img
-            src="./src/Images/rock.png"
+            src="https://i.postimg.cc/hjPTcywc/rock.png"
             alt="Ship"
             className="w-full h-full object-contain drop-shadow-lg animate-spin-slow"
             style={{ filter: "drop-shadow(0 0 12px #0ff)" }}

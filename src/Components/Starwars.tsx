@@ -82,7 +82,7 @@ function Starwars() {
     if (!cursorImg) {
       cursorImg = document.createElement("img");
       cursorImg.id = "custom-cursor-img";
-      cursorImg.src = "./src/Images/lightsaber.png";
+      cursorImg.src = "https://i.postimg.cc/fRndJTFH/lightsaber.png";
       cursorImg.style.position = "fixed";
       cursorImg.style.pointerEvents = "none";
       cursorImg.style.zIndex = "9999";

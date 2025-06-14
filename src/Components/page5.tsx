@@ -39,6 +39,7 @@ export default function Transmission() {
           onClick={() => setTorchOn(true)}
         />
      <img
+     className="md:block hidden"
        style={{
          position: "absolute",
          width: "7vw",
@@ -60,9 +61,9 @@ export default function Transmission() {
         DISTURBING
           </span>
         </h2>
-
+ <div className="relative !top-30">
         {/* Paragraph */}
-        <p className="text-xl !mt-20 sm:text-2xl md:text-2xl text-gray-400 leading-relaxed font-medium">
+        <p className="text-xl  sm:text-2xl md:text-2xl text-gray-400 leading-relaxed font-medium">
           Use the Force or the contact below
           <br />
           <span className="text-red-500 font-bold">Join the Dark Side</span> 
@@ -128,6 +129,7 @@ export default function Transmission() {
             />
           </a>
         </div>
+       </div>
         <style>{`
         
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');

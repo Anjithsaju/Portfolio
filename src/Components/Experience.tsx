@@ -143,11 +143,11 @@ const Experience: React.FC = () => {
 
   return (
     <div
-      className="scale-100 md:scale-120 min-h-screen bg-gradient-to-b from-black via-[#0a1a2f] to-black flex flex-col items-center justify-center p-2 md:p-8 relative font-mono select-text text-cyan-300 overflow-hidden"
+      className="scale-100 md:scale-120 min-h-screen bg-cover flex flex-col items-center justify-center p-2 md:p-8 relative font-mono select-text text-cyan-300 overflow-hidden"
      style={{
-              background: "linear-gradient(328deg, rgb(0 0 0), rgb(0 0 0 / 31%)) center center / cover, url(./src/Images/sky3.jpg)",
+              background: "linear-gradient(328deg, rgb(0 0 0), rgb(0 0 0 / 31%)) , url(https://i.postimg.cc/HnKwt4hC/sky3.jpg)",
               minHeight: "100vh",
-              backgroundSize: "cover",
+             
      }}
     >
       {/* Starfield background */}

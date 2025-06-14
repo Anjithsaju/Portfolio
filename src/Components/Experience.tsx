@@ -20,17 +20,16 @@ const experiences = [
     image: "https://i.postimg.cc/0QYQPtn2/mas.png",
     date: "2023",
     description:
-      "Took on advanced topics like TypeScript, testing, and cloud deployment. Mentored others and contributed to open source, striving for mastery like a true Jedi.",
+      "Undertook my Jedi Trials through an internship at DigiAlert in Chennai, focusing on cyber security. This experience tested my resolve and deepened my understanding of the Force within the cyber realm.",
   },
   {
     title: "Galactic Innovations",
-    image: "https://starwars-visualguide.com/assets/img/vehicles/4.jpg",
+    image: "https://pngimg.com/d/yoda_PNG44.png",
     date: "2024",
     description:
-      "Ventured into AI, IoT, and futuristic tech. Built innovative solutions and explored the galaxy of possibilities in software engineering.",
+      "Created a smart wearable device that helps blind people to detect curreny notes using AI and IoT. This project was a significant step towards using technology for the greater good, embodying the Jedi's commitment to helping others.",
   },
 ];
-
 
 const Experience: React.FC = () => {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -78,7 +77,7 @@ const Experience: React.FC = () => {
 
     const progress = x / (trackRect.width - shipWidth);
     progressRef.current = progress;
-    
+
     updateShipPosition(progress);
     setActiveIndex(getStageIndexFromProgress(progress));
   };
@@ -96,7 +95,7 @@ const Experience: React.FC = () => {
 
     const animate = () => {
       if (!draggingRef.current && !paused) {
-        let progress = progressRef.current + 0.001;
+        let progress = progressRef.current + 0.0003;
         if (progress >= 1) {
           progress = 1;
           progressRef.current = progress;
@@ -108,7 +107,7 @@ const Experience: React.FC = () => {
               progressRef.current = 0;
               pauseTimeout = null;
               animationFrameId = requestAnimationFrame(animate);
-            }, 1000); // 1000ms pause at last slide
+            }, 6000); // 1000ms pause at last slide
           }
           return; // Stop animating until timeout resets progress
         }
@@ -143,19 +142,17 @@ const Experience: React.FC = () => {
 
   return (
     <div
-      className="scale-100 md:scale-120 min-h-screen bg-cover flex flex-col items-center justify-center p-2 md:p-8 relative font-mono select-text text-cyan-300 overflow-hidden"
-     style={{
-              background: "linear-gradient(328deg, rgb(0 0 0), rgb(0 0 0 / 31%)) , url(https://i.postimg.cc/HnKwt4hC/sky3.jpg)",
-              minHeight: "100vh",
-             
-     }}
+      className="scale-100 md:scale-120 min-h-screen bg-cover flex flex-col items-center justify-center p-2 md:p-8 relative  select-text text-cyan-300 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(328deg, rgb(0 0 0), rgb(0 0 0 / 31%)) , url(https://i.postimg.cc/HnKwt4hC/sky3.jpg)",
+        minHeight: "100vh",
+      }}
     >
       {/* Starfield background */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        {/*  */}
-      </div>
-      <h1 className="text-2xl md:text-5xl  mb-6 md:mb-12 text-yellow-400 text-left tracking-widest  z-10 w-full pl-4 md:pl-[20vw]">
-        <span className="text-yellow-400">Experience Log</span>
+      <div className="pointer-events-none fixed inset-0 z-0">{/*  */}</div>
+      <h1 className="text-2xl md:text-5xl  mb-6 md:mb-12 text-yellow-400 text-left tracking-widest  z-10 w-full pl-4 md:pl-[18vw]">
+        <span className="text-yellow-400">From Padwan to Master</span>
       </h1>
 
       <section className="flex flex-col-reverse md:flex-row-reverse h-auto md:h-[65vh] justify-center gap-6 md:gap-12 w-full max-w-6xl px-2 md:px-8 z-10">
@@ -164,7 +161,9 @@ const Experience: React.FC = () => {
           <img
             src={experiences[activeIndex].image}
             alt="BB-8 droid rolling on a metallic floor in a futuristic sci-fi environment"
-            className={`w-full h-full object-contain hologram-flicker ${isFlicker ? "flicker-transition" : ""}`}
+            className={`w-full h-full object-contain hologram-flicker ${
+              isFlicker ? "flicker-transition" : ""
+            }`}
             draggable={false}
           />
           {/* <img
@@ -176,17 +175,19 @@ const Experience: React.FC = () => {
         </div>
 
         {/* Hologram container with flicker transition */}
+
         <div
           className={`relative w-full max-w-[95vw] md:w-[600px] min-h-[40%] bg-black/60 border border-cyan-500 rounded-lg p-4 md:p-8 shadow-glow-blue drop-shadow-lg hologram-flicker overflow-hidden backdrop-blur-md mx-auto transition-all duration-300 ${
             isFlicker ? "flicker-transition" : ""
           }`}
-           onMouseEnter={() => setPaused(true)}
-           onMouseLeave={() => setPaused(false)}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
         >
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-20 md:w-32 h-2 bg-cyan-300/40 rounded-full blur-lg animate-pulse" />
           <h2 className="text-xl md:text-3xl font-bold mb-2 drop-shadow-glow uppercase tracking-wide flicker-text text-cyan-100">
             {experiences[activeIndex].title}
           </h2>
+
           <span className="font-digital tracking-widest text-cyan-400 flicker-text mb-4 md:mb-6 block text-base md:text-lg">
             {experiences[activeIndex].date}
           </span>
@@ -197,6 +198,7 @@ const Experience: React.FC = () => {
           <div className="pointer-events-none absolute inset-0 bg-scanlines mix-blend-screen opacity-30" />
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-cyan-600/30 via-cyan-400/10 to-transparent animate-scanlines mix-blend-screen" />
         </div>
+        {/* <img className="h-[1.5rem] hidden md:block " src="./src/Images/hover.png" alt="" /> */}
       </section>
 
       {/* Track and Ship */}
@@ -207,6 +209,11 @@ const Experience: React.FC = () => {
         onPointerUp={onPointerUp}
         onPointerLeave={onPointerUp}
       >
+        <img
+          className="mix-blend-hard-light opacity-70 relative w-[15%] bottom-3 md:w-[7%] left-62 md:!left-[37.5rem] "
+          src="https://i.postimg.cc/kGwzs4rm/seek.png"
+          alt="click to navigate"
+        />
         {/* Track line */}
         <div className="absolute top-1/2 left-4 right-4 h-1 bg-cyan-400 opacity-50 -translate-y-1/2 rounded" />
 
@@ -216,7 +223,11 @@ const Experience: React.FC = () => {
             key={idx}
             style={{ left: `${(idx / (experiences.length - 1)) * 100}%` }}
             className={`absolute top-1/2 w-5 h-5 md:w-6 md:h-6 border-2 border-cyan-400 bg-black rounded-full shadow-glow-cyan -translate-y-1/2 -translate-x-1/2 hover:scale-125 transition-transform cursor-pointer flex items-center justify-center
-              ${activeIndex === idx ? "bg-cyan-400 scale-125 ring-4 ring-cyan-200/40" : ""}
+              ${
+                activeIndex === idx
+                  ? "bg-cyan-400 scale-125 ring-4 ring-cyan-200/40"
+                  : ""
+              }
             `}
             onClick={() => setActiveIndex(idx)}
           >

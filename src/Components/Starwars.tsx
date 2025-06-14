@@ -16,10 +16,8 @@ function Starwars() {
   // All useEffect hooks go here, inside the function!
   useEffect(() => {
     const handleScroll = () => {
-      const sections: NodeListOf<HTMLElement> =
-        document.querySelectorAll("section");
-      const navButtons: NodeListOf<HTMLButtonElement> =
-        document.querySelectorAll(".nav");
+      const sections = document.querySelectorAll("section");
+      const navButtons = document.querySelectorAll(".nav");
 
       let currentSection = "";
 
@@ -27,15 +25,22 @@ function Starwars() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
 
-        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+        if (
+          window.scrollY >= sectionTop - sectionHeight / 2 &&
+          window.scrollY < sectionTop + sectionHeight &&
+          section.getAttribute("id") !== null
+        ) {
           currentSection = section.getAttribute("id") || "";
+          // console.log("Current Section:", currentSection);
         }
       });
 
       navButtons.forEach((button) => {
+        // if (currentSection === "") return;
         button.classList.remove("active");
+
         if (
-          button.parentElement?.getAttribute("href")?.includes(currentSection)
+          button.parentElement?.getAttribute("href") === `#${currentSection}`
         ) {
           button.classList.add("active");
         }
@@ -44,7 +49,7 @@ function Starwars() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   useEffect(() => {
     if (torchOn) {
@@ -78,7 +83,9 @@ function Starwars() {
     }
 
     document.body.style.cursor = "none";
-    let cursorImg = document.getElementById("custom-cursor-img") as HTMLImageElement | null;
+    let cursorImg = document.getElementById(
+      "custom-cursor-img"
+    ) as HTMLImageElement | null;
     if (!cursorImg) {
       cursorImg = document.createElement("img");
       cursorImg.id = "custom-cursor-img";
@@ -109,8 +116,6 @@ function Starwars() {
     };
   }, [torchOn]);
 
-
-
   // Torch overlay effect
   useEffect(() => {
     if (!torchOn) return;
@@ -119,8 +124,12 @@ function Starwars() {
       const x = e.clientX;
       const y = e.clientY;
       if (overlay) {
-        (overlay as HTMLElement).style.maskImage = `radial-gradient(circle 200px at ${x}px ${y}px, transparent 0%, black 100%)`;
-        (overlay as HTMLElement).style.webkitMaskImage = `radial-gradient(circle 200px at ${x}px ${y}px, transparent 0%, black 100%)`;
+        (
+          overlay as HTMLElement
+        ).style.maskImage = `radial-gradient(circle 200px at ${x}px ${y}px, transparent 0%, black 100%)`;
+        (
+          overlay as HTMLElement
+        ).style.webkitMaskImage = `radial-gradient(circle 200px at ${x}px ${y}px, transparent 0%, black 100%)`;
       }
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -157,43 +166,51 @@ function Starwars() {
   };
 
   return (
-
     <>
-{torchOn && (
-  <>
-    <div className="torch-overlay">
-       {showMessage && (
-      <div className="torch-message">
-        <h4 className="!text-yellow-400 text-center">
-          🔦 <em>Jedi Trial Initiated...</em><br />
-          Seek the name <span className="text-green-400 font-bold">Yoda</span> hidden in this website.<br />
-          Click that to reveal the site back... or press <span className="text-red-400">Escape</span> to abort the mission.    Good Luck
-        </h4>
-      </div>
-    )}
-    </div>
-   
-  </>
-)}
+      {torchOn && (
+        <>
+          <div className="torch-overlay">
+            {showMessage && (
+              <div className="torch-message">
+                <h4 className="!text-yellow-400 text-center">
+                  🔦 <em>Jedi Trial Initiated...</em>
+                  <br />
+                  Seek the name{" "}
+                  <span className="text-green-400 font-bold">Yoda</span> hidden
+                  in this website.
+                  <br />
+                  Click that to reveal the site back... or press{" "}
+                  <span className="text-red-400">Escape</span> to abort the
+                  mission. Good Luck
+                </h4>
+              </div>
+            )}
+          </div>
+        </>
+      )}
 
-{/* Simple congrats popup */}
-      {showCongrats  && (
-        <div className="torch-message" style={{
-          position: "fixed",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%,-50%)",
-          zIndex: 100000,
-          background: "rgba(0,0,0,0.92)",
-          color: "#7fff00",
-          borderRadius: "1rem",
-          padding: "2rem 2.5rem",
-          textAlign: "center",
-          fontSize: "1.5rem",
-          fontWeight: 700,
-          boxShadow: "0 0 24px #00fff7cc"
-        }}>
-          🎉 Congratulations, Padawan! <br />You have found Yoda!
+      {/* Simple congrats popup */}
+      {showCongrats && (
+        <div
+          className="torch-message"
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+            zIndex: 100000,
+            background: "rgba(0,0,0,0.92)",
+            color: "#7fff00",
+            borderRadius: "1rem",
+            padding: "2rem 2.5rem",
+            textAlign: "center",
+            fontSize: "1.5rem",
+            fontWeight: 700,
+            boxShadow: "0 0 24px #00fff7cc",
+          }}
+        >
+          🎉 Congratulations, Padawan! <br />
+          You have found Yoda!
         </div>
       )}
 
@@ -203,21 +220,21 @@ function Starwars() {
       >
         <a id="stupid" href="#page1">
           <button id="hg" className="nav alata-regular">
-            Home Base
+            Home
           </button>
         </a>
         <a id="stupid" href="#page2">
-          <button className="nav">Jedi Profile</button>
+          <button className="nav">Profile</button>
         </a>
 
         <a id="stupid" href="#page3">
-          <button className="nav">Quest Log</button>
+          <button className="nav">Quests</button>
         </a>
         <a id="stupid" href="#page4">
-          <button className="nav">Force Powers</button>
+          <button className="nav">Journey</button>
         </a>
         <a id="stupid" href="#page5">
-          <button className="nav">Transmission</button>
+          <button className="nav">Contact</button>
         </a>
       </nav>
       <section id="page1">
@@ -235,18 +252,21 @@ function Starwars() {
         {/* <img src="./src/Images/data.jpg" alt="" /> */}
 
         <div className="content">
-  <h4>
+          <h4>
             "Do or do not. There is no try." —{" "}
             <span
               style={{ cursor: "pointer", textDecoration: "none" }}
               onClick={handleYodaClick}
               tabIndex={0}
-              onKeyDown={e => { if (e.key === "Enter" || e.key === " ") handleYodaClick(); }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleYodaClick();
+              }}
               aria-label="Turn off torch effect"
             >
               Yoda
             </span>
-          </h4>          <div>
+          </h4>{" "}
+          <div>
             <a id="stupid" href="https://youtu.be/frszEJb0aOo?feature=shared">
               <h5> Hello there!</h5>
             </a>
@@ -283,7 +303,7 @@ function Starwars() {
       <section id="page4" className="overflow-hidden">
         {/* <Yodastory></Yodastory> */}
         {/* <img src="./src/Images/yoda.png" alt="" /> */}
-        
+
         <Experience></Experience>
         {/* <div className="data">
           <Home></Home>

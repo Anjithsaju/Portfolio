@@ -126,7 +126,7 @@ nav {
   justify-content: space-evenly;
   background: linear-gradient(9deg, rgb(0 0 0), rgb(0 0 0 / 26%)),
     url(https://i.postimg.cc/Pq48C5k0/Shooting-Stars-Wallpaper-HD.jpg);
-     /* background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
+  /* background: linear-gradient(143deg, rgb(0 0 0 / 89%), rgba(0, 0, 0, 0.26)),
     url("https://i.postimg.cc/W1w5grVb/Star-Wars-spaceship-Imperial-Forces-digital-art-science-fiction-Star-Wars-Ships-1552607-wallhere-com.jpg");
   background-size: cover; */
   background-size: cover;
@@ -138,7 +138,11 @@ nav {
   inset: 0;
   background: rgba(0, 0, 0, 0.97);
   mask-image: radial-gradient(circle 200px at 0 0, transparent 0%, black 100%);
-  -webkit-mask-image: radial-gradient(circle 200px at 0 0, transparent 0%, black 100%);
+  -webkit-mask-image: radial-gradient(
+    circle 200px at 0 0,
+    transparent 0%,
+    black 100%
+  );
   pointer-events: none;
   z-index: 99999;
 }
@@ -158,10 +162,18 @@ nav {
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .content {
@@ -224,6 +236,16 @@ nav {
 
   .navbar1.visible {
     transform: translateY(0);
+  }
+  .navbar1 {
+    width: 80%;
+    margin: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 10px;
+    justify-content: space-around;
   }
   .nav {
     margin: 1px;

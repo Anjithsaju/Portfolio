@@ -15,7 +15,7 @@ export default function Transmission() {
         height: '100vh',
       }}
       className="text-white overflow-hidden flex items-center justify-start px-10 md:px-20 py-20"
-      id="transmission"
+      
     >
       <style
         dangerouslySetInnerHTML={{
@@ -93,7 +93,7 @@ export default function Transmission() {
             )}
           </button>
           <a
-            href="mailto:anjithsaju123@gmail.com"
+            href="https://www.instagram.com/anjith_saju/?igsh=MTB3Y3B5dW1pdTJ2Nw%3D%3D#"
             target="_blank"
             rel="noopener noreferrer"
             className="md:w-[80px] w-8 h-8 sm:w-[80px] sm:h-auto flex items-center"

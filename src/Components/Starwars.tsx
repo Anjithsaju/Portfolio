@@ -5,7 +5,10 @@ import { useEffect, useState } from "react";
 import Experience from "./Experience";
 import Transmission from "./page5";
 import { useTorch } from "./TorchContext";
-
+import BlurText from "./BlurText";
+// import ShinyText from "./ShinyText/ShinyText";
+// import DecryptedText from "./DecryptedText/DecryptedText";
+// import SplitText from "./SplitText/SplitText";
 function Starwars() {
   const { torchOn, setTorchOn } = useTorch();
   const [showMessage, setShowMessage] = useState(true);
@@ -239,9 +242,16 @@ function Starwars() {
       </nav>
       <section id="page1">
         <div className="Textcontainer">
-          <h1 className="alata-regular">
+          <BlurText
+            text="A Long Time Ago, in a Codebase Far, Far Away..."
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="alata-regular text-2xl mb-8 w-[clamp(53%,58vh,84%)] text-[clamp(2rem,4vw,24rem)] text-[#ffc107]"
+          />
+          {/* <h1 className="alata-regular">
             A Long Time Ago, in a Codebase Far, Far Away...
-          </h1>
+          </h1> */}
           <h5 className="poppins-regular">
             ...I began my journey as a developer. I'm Anjith Saju, focused on
             crafting efficient and elegant solutions.
@@ -266,6 +276,12 @@ function Starwars() {
               Yoda
             </span>
           </h4>{" "}
+          {/* <ShinyText
+            text="Do or do not. There is no try."
+            disabled={false}
+            speed={3}
+            className="custom-class  !text-[clamp(1.5rem, 2.5vw, 5rem)] !text-gold"
+          /> */}
           <div>
             <a id="stupid" href="https://youtu.be/frszEJb0aOo?feature=shared">
               <h5> Hello there!</h5>

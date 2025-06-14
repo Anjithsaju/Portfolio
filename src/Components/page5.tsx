@@ -1,6 +1,5 @@
 import React from "react";
 import { useTorch } from "./TorchContext";
-
 export default function Transmission() {
   const [copied, setCopied] = React.useState(false);
   const { setTorchOn } = useTorch();
@@ -8,14 +7,14 @@ export default function Transmission() {
   return (
     <section
       style={{
-        background: 'linear-gradient(197deg, rgb(0 0 0 / 80%), rgba(0, 0, 0, 0.5)), url(https://i.postimg.cc/0Nv7H206/darthvader.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'right center',
-        backgroundRepeat: 'no-repeat',
-        height: '100vh',
+        background:
+          "linear-gradient(197deg, rgb(0 0 0 / 80%), rgba(0, 0, 0, 0.5)), url(https://i.postimg.cc/0Nv7H206/darthvader.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "right center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
       }}
       className="text-white overflow-hidden flex items-center justify-start px-10 md:px-20 py-20"
-      
     >
       <style
         dangerouslySetInnerHTML={{
@@ -38,98 +37,121 @@ export default function Transmission() {
           alt=""
           onClick={() => setTorchOn(true)}
         />
-     <img
-     className="md:block hidden"
-       style={{
-         position: "absolute",
-         width: "7vw",
-         mixBlendMode: "color-dodge",
-         top: "8vw"
-       }}
-       src="https://i.postimg.cc/7Z0gVT08/click.png"
-       alt="click on lightsaber"
-     />
+        <img
+          className="md:block hidden"
+          style={{
+            position: "absolute",
+            width: "7vw",
+            mixBlendMode: "color-dodge",
+            top: "8vw",
+          }}
+          src="https://i.postimg.cc/7Z0gVT08/click.png"
+          alt="click on lightsaber"
+        />
         {/* Large Main Heading */}
         <h2
-          style={{ fontSize: "clamp(2rem, 3.7vw, 24rem)" ,color:"#ffffffa6"}}
+          style={{ fontSize: "clamp(2rem, 3.7vw, 24rem)", color: "#ffffffa6" }}
           className=" koulen-regular text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold uppercase leading-tight tracking-wide"
         >
           I FIND YOUR LACK OF CONTACT…
           <br />
-          <span className="koulen-regular     relative
-        left-[27vw] text-red-600 text-[2.2rem] sm:text-[3rem] md:text-[5rem] lg:text-[5rem] block mt-2">
-        DISTURBING
+          <span
+            className="koulen-regular     relative
+        left-[27vw] text-red-600 text-[2.2rem] sm:text-[3rem] md:text-[5rem] lg:text-[5rem] block mt-2"
+          >
+            DISTURBING
           </span>
         </h2>
- <div className="relative !top-30">
-        {/* Paragraph */}
-        <p className="text-xl  sm:text-2xl md:text-2xl text-gray-400 leading-relaxed font-medium">
-          Use the Force or the contact below
-          <br />
-          <span className="text-red-500 font-bold">Join the Dark Side</span> 
-        </p>
+        <div className="relative !top-30">
+          {/* Paragraph */}
+          <p className="text-xl  sm:text-2xl md:text-2xl text-gray-400 leading-relaxed font-medium">
+            Use the Force or the contact below
+            <br />
+            <span className="text-red-500 font-bold">Join the Dark Side</span>
+          </p>
 
-        {/* Buttons */}
-        <div className="flex flex-row sm:justify-start justify-around sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 pt-2 items-start sm:items-center">
-          <button
-            className={`bg-red-600 hover:bg-red-700 transition px-5 py-2 !rounded-[40px] text-white text-lg font-semibold shadow-xl relative overflow-hidden ${
-              copied ? "animate-pop" : ""
-            }`}
-            onClick={async () => {
-              await navigator.clipboard.writeText("anjithsaju123@gmail.com");
-              setCopied(true);
-              setTimeout(() => setCopied(false), 5000);
-            }}
-          >
-            <span className="relative z-10">{copied ? "Mail Copied!" : "Copy mail"}</span>
-            {/* Cool burst animation */}
-            {copied && (
-              <span className="absolute inset-0 pointer-events-none flex items-center justify-center">
-          <svg width="60" height="60" viewBox="0 0 60 60" className="animate-burst">
-            <circle cx="30" cy="30" r="10" fill="none" stroke="#fff" strokeWidth="4" />
-            <circle cx="30" cy="30" r="20" fill="none" stroke="#fff" strokeWidth="2" />
-          </svg>
+          {/* Buttons */}
+          <div className="flex flex-row sm:justify-start justify-around sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 pt-2 items-start sm:items-center">
+            <button
+              className={`bg-red-600 hover:bg-red-700 transition px-5 py-2 !rounded-[40px] text-white text-lg font-semibold shadow-xl relative overflow-hidden ${
+                copied ? "animate-pop" : ""
+              }`}
+              onClick={async () => {
+                await navigator.clipboard.writeText("anjithsaju123@gmail.com");
+                setCopied(true);
+                setTimeout(() => setCopied(false), 5000);
+              }}
+            >
+              <span className="relative z-10">
+                {copied ? "Mail Copied!" : "Copy mail"}
               </span>
-            )}
-          </button>
-          <a
-            href="https://www.instagram.com/anjith_saju/?igsh=MTB3Y3B5dW1pdTJ2Nw%3D%3D#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:w-[80px] w-8 h-8 sm:w-[80px] sm:h-auto flex items-center"
-          >
-            <img
-              src="https://pngcore.com/files/preview/901x583/117271575499ldpsm2hwtirlhlblpay91ptqz91akkfesgz5xujnqegpyzyutnb0jr9vrnt0gfhkfblo6pfyu5isot53qxb67mdhmyetfdshzqj.png"
-              alt="Mail"
-              className="w-full h-full"
-            />
-          </a>
-          <a
-            href="https://github.com/Anjithsaju"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:w-[50px] w-8 h-8 sm:w-[50px] sm:h-auto md:mr-10 scale-90 flex items-center"
-          >
-            <img
-              src="https://cdn0.iconfinder.com/data/icons/shift-logotypes/32/Github-512.png"
-              alt="GitHub"
-              className="w-full h-full"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/anjithsaju"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:w-[50px] w-8 h-8 sm:w-[50px] sm:h-auto flex items-center"
-          >
-            <img
-              src="https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png"
-              alt="LinkedIn"
-              className="w-full h-full"
-            />
-          </a>
+              {/* Cool burst animation */}
+              {copied && (
+                <span className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                  <svg
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    className="animate-burst"
+                  >
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="10"
+                      fill="none"
+                      stroke="#fff"
+                      strokeWidth="4"
+                    />
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="20"
+                      fill="none"
+                      stroke="#fff"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </span>
+              )}
+            </button>
+            <a
+              href="https://www.instagram.com/anjith_saju/?igsh=MTB3Y3B5dW1pdTJ2Nw%3D%3D#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:w-[80px] w-8 h-8 sm:w-[80px] sm:h-auto flex items-center"
+            >
+              <img
+                src="https://pngcore.com/files/preview/901x583/117271575499ldpsm2hwtirlhlblpay91ptqz91akkfesgz5xujnqegpyzyutnb0jr9vrnt0gfhkfblo6pfyu5isot53qxb67mdhmyetfdshzqj.png"
+                alt="Mail"
+                className="w-full h-full"
+              />
+            </a>
+            <a
+              href="https://github.com/Anjithsaju"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:w-[50px] w-8 h-8 sm:w-[50px] sm:h-auto md:mr-10 scale-90 flex items-center"
+            >
+              <img
+                src="https://cdn0.iconfinder.com/data/icons/shift-logotypes/32/Github-512.png"
+                alt="GitHub"
+                className="w-full h-full"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/anjithsaju"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:w-[50px] w-8 h-8 sm:w-[50px] sm:h-auto flex items-center"
+            >
+              <img
+                src="https://img.icons8.com/m_rounded/512/FFFFFF/linkedin--v2.png"
+                alt="LinkedIn"
+                className="w-full h-full"
+              />
+            </a>
+          </div>
         </div>
-       </div>
         <style>{`
         
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');

@@ -287,13 +287,15 @@ function Starwars() {
               <h5> Hello there!</h5>
             </a>
             <p className="poppins-regular">
-              I'm Anjith , a passionate Full Stack Developer with a knack for
-              creating immersive digital experiences. My journey in the world of
-              development began with a simple curiosity, and over time, I've
-              honed my skills to become proficient in a wide array of
-              technologies. From the front-end galaxies of JavaScript, React,
-              and HTML/CSS to the back-end realms of Python, Flask, and Node.js,
-              I’ve navigated the coding universe with precision and creativity.
+              I'm Anjith Saju, a passionate Full Stack Developer with a strong
+              focus on building seamless and engaging digital experiences. What
+              began as a curiosity for how things work on the web has evolved
+              into a deep expertise in a wide range of technologies. I
+              specialize in front-end development using JavaScript, React, and
+              HTML/CSS, and I'm equally skilled in back-end development with
+              Python, Flask, and Node.js. With a balanced approach to design and
+              functionality, I strive to create solutions that are both
+              efficient and user-centric.
             </p>
 
             <h4>Force Abilities</h4>

@@ -2,32 +2,32 @@ import React, { useRef, useState, useEffect } from "react";
 
 const experiences = [
   {
-    title: "Padawan Initiation",
+    title: "Getting Started",
     image: "https://i.postimg.cc/wMFjs7nC/childd.png",
     date: "2021",
     description:
-      "Embarked on my coding journey, learning the basics of HTML, CSS, and JavaScript. Like a Padawan, I was eager to absorb knowledge and master the fundamentals.",
+      "Began my journey in web development by learning the fundamentals of HTML, CSS, and JavaScript. Built a strong foundation and developed a passion for coding.",
   },
   {
-    title: "Clone Wars Campaign",
+    title: "Collaborative Projects",
     image: "https://i.postimg.cc/HnTLxQv0/knight.png",
     date: "2022",
     description:
-      "Joined collaborative projects, working with teams to build full-stack applications. Faced challenges and learned the importance of teamwork and code reviews.",
+      "Worked on full-stack projects as part of a team, gaining valuable experience in collaboration, version control, and agile development practices.",
   },
   {
-    title: "Jedi Trials",
+    title: "Industry Experience",
     image: "https://i.postimg.cc/0QYQPtn2/mas.png",
     date: "2023",
     description:
-      "Undertook my Jedi Trials through an internship at DigiAlert in Chennai, focusing on cyber security. This experience tested my resolve and deepened my understanding of the Force within the cyber realm.",
+      "Completed an internship at DigiAlert in Chennai, where I focused on cybersecurity. The experience enhanced my technical skills and introduced me to real-world challenges in securing digital systems.",
   },
   {
-    title: "Galactic Innovations",
+    title: "Tech for Good",
     image: "https://pngimg.com/d/yoda_PNG44.png",
     date: "2024",
     description:
-      "Created a smart wearable device that helps blind people to detect curreny notes using AI and IoT. This project was a significant step towards using technology for the greater good, embodying the Jedi's commitment to helping others.",
+      "Developed a smart wearable device to assist visually impaired individuals in identifying currency notes using AI and IoT. This project emphasized the impact of technology in improving lives.",
   },
 ];
 

@@ -1,40 +1,6 @@
-Anjith Saju's Portfolio Website
-Welcome to my personal portfolio website repository! This site showcases my skills, projects, and experience as a full-stack developer passionate about building clean, user-friendly, and impactful software.
+🌐 Anjith Saju – Portfolio Website
 
-About Me
-I am Anjith Saju, a software engineer specializing in JavaScript, TypeScript, React, Node.js, Python, and Flask. I enjoy solving real-world problems through code and continuously learning new technologies.
+Welcome to my personal portfolio website repository!
+This site showcases my skills, projects, and experience as a full-stack developer passionate about building clean, user-friendly, and impactful software.
 
-Portfolio Highlights
-BaakiPinnetharam — A full-stack expense-splitting web app designed for group use with real-time synchronization.
-
-Theia — A patented wearable device that assists visually impaired individuals in recognizing Indian currency using real-time image processing and embedded systems.
-
-Additional personal projects covering frontend, backend, and mobile development.
-
-Technologies Used
-Frontend: React, React Native, HTML, CSS, JavaScript, TypeScript
-
-Backend: Node.js, Express.js, Flask, Python
-
-Databases: MongoDB, SQL
-
-Tools & Platforms: Git, GitHub, Docker, Raspberry Pi (for embedded projects)
-
-Features
-Responsive, clean UI design
-
-Efficient and scalable backend logic
-
-Accessibility-focused development (e.g., Theia)
-
-Modular, reusable React components
-
-Real-time data synchronization and updates
-
-
-
-Contributing
-This repository is mainly for my personal portfolio. However, suggestions and feedback are welcome via GitHub Issues or pull requests.
-
-Contact
-Feel free to connect with me on LinkedIn or via email at anjithsaju28@gmail.com .
+🔗 Live Website: https://anjithsaju.vercel.app/

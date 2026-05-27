@@ -23,11 +23,11 @@ const experiences = [
       "Completed an internship at DigiAlert in Chennai, where I focused on cybersecurity. The experience enhanced my technical skills and introduced me to real-world challenges in securing digital systems.",
   },
   {
-    title: "Tech for Good",
-    image: "https://pngimg.com/d/yoda_PNG44.png",
-    date: "2024",
+    title: "Japan Internship Journey",
+    image: "https://pngimg.com/uploads/yoda/yoda_PNG44.png",
+    date: "2026",
     description:
-      "Developed a smart wearable device to assist visually impaired individuals in identifying currency notes using AI and IoT. This project emphasized the impact of technology in improving lives.",
+      "Worked on production-level Ruby on Rails applications, full-stack development, and real-world engineering workflows during my internship in Japan.",
   },
 ];
 

@@ -121,9 +121,9 @@ export default function Transmission() {
               className="md:w-[80px] w-8 h-8 sm:w-[80px] sm:h-auto flex items-center"
             >
               <img
-                src="https://pngcore.com/files/preview/901x583/117271575499ldpsm2hwtirlhlblpay91ptqz91akkfesgz5xujnqegpyzyutnb0jr9vrnt0gfhkfblo6pfyu5isot53qxb67mdhmyetfdshzqj.png"
+                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png"
                 alt="Mail"
-                className="w-full h-full"
+                className="w-[60%] mx-auto"
               />
             </a>
             <a
